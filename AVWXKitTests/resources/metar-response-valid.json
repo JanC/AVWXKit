@@ -1,0 +1,38 @@
+{
+    "Altimeter": "2995",
+    "Cloud-List": [
+                   [
+                    "BKN",
+                    "095"
+                    ]
+                   ],
+    "Dewpoint": "04",
+    "Flight-Rules": "VFR",
+    "Meta": {
+        "Cache-Timestamp": "Tue, 13 Feb 2018 08:51:45 GMT",
+        "Timestamp": "Tue, 13 Feb 2018 08:51:45 GMT"
+    },
+    "Other-List": [],
+    "Raw-Report": "KSBP 130756Z 00000KT 10SM BKN095 08/04 A2995 RMK AO2 SLP143 T00780039 401610039",
+    "Remarks": "RMK AO2 SLP143 T00780039 401610039",
+    "Remarks-Info": {
+        "Dew-Decimal": "3.9",
+        "Temp-Decimal": "7.8"
+    },
+    "Runway-Vis-List": [],
+    "Station": "KSBP",
+    "Temperature": "08",
+    "Time": "130756Z",
+    "Units": {
+        "Altimeter": "inHg",
+        "Altitude": "ft",
+        "Temperature": "C",
+        "Visibility": "sm",
+        "Wind-Speed": "kt"
+    },
+    "Visibility": "10",
+    "Wind-Direction": "000",
+    "Wind-Gust": "",
+    "Wind-Speed": "00",
+    "Wind-Variable-Dir": []
+}
