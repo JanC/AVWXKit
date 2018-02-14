@@ -116,6 +116,7 @@ public struct AVWXClient {
                     let result = try decoder.decode(T.self, from: data)
                     completion(Result.success(result))
                 } catch {
+                    print(error)
                     completion(.failure(error))
                 }
             }
