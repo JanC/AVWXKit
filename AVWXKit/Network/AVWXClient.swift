@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AVWXClient {
+public struct AVWXClient {
     
     let session = URLSession(configuration: URLSessionConfiguration.default)
     let baseURL: URL
@@ -23,11 +23,15 @@ struct AVWXClient {
     
 
     public struct MetarOptions: OptionSet {
-        let rawValue: Int
+        public let rawValue: Int
         
-        static let speech       = MetarOptions(rawValue: 1 << 0)
-        static let info         = MetarOptions(rawValue: 1 << 1)
-        static let translate    = MetarOptions(rawValue: 1 << 2)
+        public init(rawValue: Int) {
+            self.rawValue = rawValue
+        }
+        
+        public static let speech       = MetarOptions(rawValue: 1 << 0)
+        public static let info         = MetarOptions(rawValue: 1 << 1)
+        public static let translate    = MetarOptions(rawValue: 1 << 2)
         
         func string() -> String? {
             var result = [String]()
@@ -94,7 +98,7 @@ struct AVWXClient {
             completion(result)
         }
     }
-    public func fetch<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T>) -> () ) {
+    func fetch<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T>) -> () ) {
         let task = session.dataTask(with: endpoint.url(baseURL: baseURL)) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))

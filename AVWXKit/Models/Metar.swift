@@ -8,23 +8,23 @@
 
 import Foundation
 
-struct Metar: Decodable {
+public struct Metar: Decodable {
     
-    enum FlightRules: String, Decodable {
+    public enum FlightRules: String, Decodable {
         case vfr = "VFR"
         case ifr = "IFR"
     }
     
-    let rawReport: String
-    let remarks: String
-    let altimeter: String
-    let dewPoint: String
-    let flightRules: FlightRules
-    let visibility: String
-    let windDirection: String
-    let windGust: String
-    let windSpeed: String
-    let windVariableDirection: [String]
+    public let rawReport: String
+    public let remarks: String
+    public let altimeter: String
+    public let dewPoint: String
+    public let flightRules: FlightRules
+    public let visibility: String
+    public let windDirection: String
+    public let windGust: String
+    public let windSpeed: String
+    public let windVariableDirection: [String]
     
     enum CodingKeys: String, CodingKey {
         case rawReport      = "Raw-Report"
