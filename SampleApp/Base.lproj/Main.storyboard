@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -34,6 +39,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPC-wY-HKD">
                                                 <rect key="frame" x="248" y="0.0" width="95" height="30"/>
                                                 <state key="normal" title="Request"/>
+                                                <connections>
+                                                    <action selector="requestIcaoActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HMg-3p-yvC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -63,16 +71,36 @@
                                     <constraint firstAttribute="height" constant="80" id="7xK-jh-1sw"/>
                                 </constraints>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tuo-93-UI5">
+                                <rect key="frame" x="16" y="186" width="343" height="461"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tuo-93-UI5" secondAttribute="bottom" constant="20" id="9so-OR-FPX"/>
                             <constraint firstItem="KR7-Ez-2zD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="E2N-ds-HKk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tuo-93-UI5" secondAttribute="trailing" constant="16" id="Jox-Cz-sQo"/>
+                            <constraint firstItem="tuo-93-UI5" firstAttribute="top" secondItem="KR7-Ez-2zD" secondAttribute="bottom" constant="30" id="VaA-Rr-45l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KR7-Ez-2zD" secondAttribute="trailing" constant="16" id="aE0-0b-nbG"/>
                             <constraint firstItem="KR7-Ez-2zD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="iKy-9p-dcd"/>
+                            <constraint firstItem="tuo-93-UI5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="q2a-u9-ySV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5wn-YV-6pJ"/>
+                    <navigationItem key="navigationItem" id="5wn-YV-6pJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="aKA-eS-tAm">
+                            <connections>
+                                <action selector="speekActionWithSender:" destination="BYZ-38-t0r" id="0eE-mM-GLR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="icaoTextField" destination="Qpy-Ko-RXV" id="j3g-ZS-qLD"/>
+                        <outlet property="textView" destination="tuo-93-UI5" id="FAE-VB-7Q2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
