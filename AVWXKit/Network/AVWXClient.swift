@@ -15,10 +15,37 @@ struct AVWXClient {
     
     
     
-    public enum AVWXClientError: Error {
+    public enum ClientError: Error {
         case invalidResponseCode(Int)
         case parsing(Error)
         case network(Error)
+    }
+    
+
+    public struct MetarOptions: OptionSet {
+        let rawValue: Int
+        
+        static let speech       = MetarOptions(rawValue: 1 << 0)
+        static let info         = MetarOptions(rawValue: 1 << 1)
+        static let translate    = MetarOptions(rawValue: 1 << 2)
+        
+        func string() -> String? {
+            var result = [String]()
+            if self.isEmpty {
+                return nil
+            }
+            if self.contains(.info) {
+                result.append("info")
+            }
+            if self.contains(.translate) {
+                result.append("translate")
+            }
+            if self.contains(.speech) {
+                result.append("speech")
+            }
+            
+            return result.joined(separator: ",")
+        }
     }
     
     public enum Result<T> {
@@ -27,13 +54,28 @@ struct AVWXClient {
     }
     
     enum Endpoint {
-        case metar(String)
+        
+        case metar(String, MetarOptions)
         case taf(String)
         
         func url(baseURL: URL) -> URL {
             switch self {
-            case .metar(let icao):
-                return baseURL.appendingPathComponent("metar/\(icao)")
+            case .metar(let icao, let options):
+                
+                var fullUrl = baseURL.appendingPathComponent("metar/\(icao)")
+                
+                if
+                    let optionValues = options.string(),
+                    var components = URLComponents(url: fullUrl, resolvingAgainstBaseURL: false)
+                {
+                    components.queryItems =  [URLQueryItem(name: "options", value: optionValues)]
+                    if let url = components.url {
+                        fullUrl = url
+                    }
+                }
+                return fullUrl
+                
+                
             case .taf(let icao):
                 return baseURL.appendingPathComponent("taf/\(icao)")
             }
@@ -44,20 +86,23 @@ struct AVWXClient {
         self.baseURL = baseURL
     }
     
-    public func fetchMetar(forIcao icao: String, completion: @escaping (Result<Metar>) -> () ) {
-        fetch(for: icao) { (result: Result<Metar>) in
+    public func fetchMetar(forIcao icao: String, options: MetarOptions = [], completion: @escaping (Result<Metar>) -> () ) {
+        
+        let endpoint = Endpoint.metar(icao, options)
+        
+        fetch(endpoint: endpoint) { (result: Result<Metar>) in
             completion(result)
         }
     }
-    public func fetch<T: Decodable>(for icao: String, completion: @escaping (Result<T>) -> () ) {
-        let task = session.dataTask(with: Endpoint.metar(icao).url(baseURL: baseURL)) { (data, response, error) in
+    public func fetch<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T>) -> () ) {
+        let task = session.dataTask(with: endpoint.url(baseURL: baseURL)) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
             
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode < 200 || httpResponse.statusCode > 299 {
-                completion(.failure(AVWXClientError.invalidResponseCode(httpResponse.statusCode)))
+                completion(.failure(ClientError.invalidResponseCode(httpResponse.statusCode)))
                 return
             }
             

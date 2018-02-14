@@ -20,6 +20,7 @@
 		8ABB6DEB2032E75900A466D8 /* metar-response-valid.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AACF1B02032E27A00732E86 /* metar-response-valid.json */; };
 		8ABB6DEE20333EF800A466D8 /* AVWXClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB6DED20333EF800A466D8 /* AVWXClient.swift */; };
 		8ABB6DF0203345BA00A466D8 /* AVWXClientSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB6DEF203345BA00A466D8 /* AVWXClientSpecs.swift */; };
+		8ABB6DF2203362E500A466D8 /* EndpointSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB6DF1203362E500A466D8 /* EndpointSpecs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		8AACF1B02032E27A00732E86 /* metar-response-valid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "metar-response-valid.json"; sourceTree = "<group>"; };
 		8ABB6DED20333EF800A466D8 /* AVWXClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVWXClient.swift; sourceTree = "<group>"; };
 		8ABB6DEF203345BA00A466D8 /* AVWXClientSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVWXClientSpecs.swift; sourceTree = "<group>"; };
+		8ABB6DF1203362E500A466D8 /* EndpointSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointSpecs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				8AACF19E2032E11400732E86 /* Info.plist */,
 				8AACF1A52032E12700732E86 /* DeserialisationSpecs.swift */,
 				8ABB6DEF203345BA00A466D8 /* AVWXClientSpecs.swift */,
+				8ABB6DF1203362E500A466D8 /* EndpointSpecs.swift */,
 			);
 			path = AVWXKitTests;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABB6DF2203362E500A466D8 /* EndpointSpecs.swift in Sources */,
 				8AACF1A62032E12700732E86 /* DeserialisationSpecs.swift in Sources */,
 				8ABB6DF0203345BA00A466D8 /* AVWXClientSpecs.swift in Sources */,
 			);
