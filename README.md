@@ -62,7 +62,7 @@ We would love you for the contribution to **AVWXKit**, check the ``LICENSE`` fil
 
 ## Meta
 
-Your Name – [@YourTwitter](https://twitter.com/TexTwil) 
+Jan Chaloupecky – [@TexTwil](https://twitter.com/TexTwil) 
 
 Distributed under the XYZ license. See ``LICENSE`` for more information.
 
