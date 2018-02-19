@@ -58,19 +58,19 @@ class ViewController: UIViewController {
         
         MBProgressHUD.showAdded(to: view, animated: true)
         
-        client.fetchMetar(forIcao: icaoTextField.text!, options: [.speech, .info])
-            .observeOn(MainScheduler.instance)
-            .map { $0.rawReport }
-            .subscribe(onSuccess: { [weak self] metar in
-                guard let sself = self else { return }
-                sself.textView.text = metar
-                
-            }, onError: { [weak self] error in
-                guard let sself = self else { return }
-                MBProgressHUD.hide(for: sself.view, animated: true)
-                sself.showMessage("Error", description: error.localizedDescription)
-                
-            }).disposed(by: disposeBag)
+client.fetchMetar(forIcao: icaoTextField.text!, options: [.speech, .info])
+    .observeOn(MainScheduler.instance)
+    .map { $0.rawReport }
+    .subscribe(onSuccess: { [weak self] metar in
+        guard let sself = self else { return }
+        sself.textView.text = metar
+        
+    }, onError: { [weak self] error in
+        guard let sself = self else { return }
+        MBProgressHUD.hide(for: sself.view, animated: true)
+        sself.showMessage("Error", description: error.localizedDescription)
+        
+    }).disposed(by: disposeBag)
 
         
         

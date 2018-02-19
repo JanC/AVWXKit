@@ -44,7 +44,7 @@ import AVWXKit
 
 let client = AVWXClient()
 
-client.fetchMetar(forIcao: "KSBP") { result in
+client.fetchMetar(forIcao: "KSBP", options: [.speech, .info]) { result in
     switch result {
     case .success(let metar):
         print("Metar: \(metar.rawReport)")
@@ -55,6 +55,31 @@ client.fetchMetar(forIcao: "KSBP") { result in
     }
 }
 ```
+
+## RxSwift example
+
+`AVWXKit` is also wrapped in a `AVWXKitRx` which exposes the API in [RxSwift](https://github.com/ReactiveX/RxSwift). The example above becomes
+
+```swift
+import AVWXKit
+import AVWXKitRx
+
+
+client.fetchMetar(forIcao: "KSBP", options: [.speech, .info])
+    .observeOn(MainScheduler.instance)
+    .subscribe(onSuccess: { [weak self] metar in
+        guard let sself = self else { return }
+		 print("Metar: \(metar)")
+        
+    }, onError: { [weak self] error in
+        guard let sself = self else { return }
+        MBProgressHUD.hide(for: sself.view, animated: true)
+        sself.showMessage("Error", description: error.localizedDescription)
+        
+    }).disposed(by: disposeBag)
+```
+
+
 
 ## Contribute
 
