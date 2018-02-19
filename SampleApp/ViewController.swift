@@ -56,30 +56,22 @@ class ViewController: UIViewController {
     
     @IBAction func fetchAction(sender: Any) {
         
-        // API 
-        let request = client.fetchMetar(forIcao: icaoTextField.text!, options: [.speech, .info]).share()
+        MBProgressHUD.showAdded(to: view, animated: true)
         
-        // handles the request
-        request
+        client.fetchMetar(forIcao: icaoTextField.text!, options: [.speech, .info])
             .observeOn(MainScheduler.instance)
             .map { $0.rawReport }
-            .subscribe(onNext: { [weak self] metar in
-                self?.textView.text = metar
+            .subscribe(onSuccess: { [weak self] metar in
+                guard let sself = self else { return }
+                sself.textView.text = metar
+                
             }, onError: { [weak self] error in
-                self?.showMessage("Error", description: error.localizedDescription)
-            }, onCompleted: {
-                print("on completed")
+                guard let sself = self else { return }
+                MBProgressHUD.hide(for: sself.view, animated: true)
+                sself.showMessage("Error", description: error.localizedDescription)
+                
             }).disposed(by: disposeBag)
-        
-        // handle the UI state
-        MBProgressHUD.showAdded(to: view, animated: true)
-        request
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { _ in
-                //
-            }, onCompleted: {
-                MBProgressHUD.hide(for: self.view, animated: true)
-            }).disposed(by: disposeBag)
+
         
         
 //        // handles the speech

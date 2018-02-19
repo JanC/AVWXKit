@@ -12,19 +12,19 @@ import RxSwift
 
 extension AVWXClient {
     
-    public func fetchMetar(forIcao icao: String, options: MetarOptions = []) -> Observable<Metar> {
-        return Observable.create { (observer) -> Disposable in
+    public func fetchMetar(forIcao icao: String, options: MetarOptions = []) -> Single<Metar> {
+       
+        return Single.create { (observer) -> Disposable in
             
             self.fetchMetar(forIcao: icao, options: options, completion: { (result) in
                 switch result {
                 case .success(let metar):
-                    observer.onNext(metar)
+                    observer(.success(metar))
                     break
                 case .failure(let error):
-                    observer.onError(error)
+                    observer(.error(error))
                     break
                 }
-                observer.onCompleted()
             })
             return Disposables.create()
         }
