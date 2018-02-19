@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 public struct Metar: Decodable {
     
     public enum FlightRules: String, Decodable {
@@ -15,7 +16,14 @@ public struct Metar: Decodable {
         case mfr = "MVFR"
         case ifr = "IFR"
         case mifr = "MIFR"
+    }
+    
+    public struct Info: Decodable {
+        public let name: String
         
+        enum CodingKeys: String, CodingKey {
+            case name = "Name"
+        }
     }
     
     public let rawReport: String
@@ -32,6 +40,9 @@ public struct Metar: Decodable {
     /// if requested with the "speech" option
     public let speech: String?
     
+    /// if requested with the "info" option
+    public let info: Info?
+    
     enum CodingKeys: String, CodingKey {
         case rawReport      = "Raw-Report"
         case altimeter      = "Altimeter"
@@ -43,6 +54,7 @@ public struct Metar: Decodable {
         case windGust       = "Wind-Gust"
         case windSpeed      = "Wind-Speed"
         case windVariableDirection = "Wind-Variable-Dir"
-        case speech = "Speech"
+        case speech         = "Speech"
+        case info           = "Info"
     }
 }

@@ -1,4 +1,9 @@
-
+# Unit Tests
 github "Quick/Quick"
 github "Quick/Nimble"
-github "AliSoftware/OHHTTPStubs
+github "AliSoftware/OHHTTPStubs"
+
+# Sample App
+github "ReactiveX/RxSwift" ~> 4.0
+github "jdg/MBProgressHUD" ~> 1.1.0
+

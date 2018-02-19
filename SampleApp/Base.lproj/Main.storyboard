@@ -40,7 +40,7 @@
                                                 <rect key="frame" x="248" y="0.0" width="95" height="30"/>
                                                 <state key="normal" title="Request"/>
                                                 <connections>
-                                                    <action selector="requestIcaoActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HMg-3p-yvC"/>
+                                                    <action selector="fetchActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xpY-Jo-3f5"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -99,6 +99,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="icaoTextField" destination="Qpy-Ko-RXV" id="j3g-ZS-qLD"/>
+                        <outlet property="metarRequestButton" destination="WPC-wY-HKD" id="5UD-sz-cfp"/>
                         <outlet property="textView" destination="tuo-93-UI5" id="FAE-VB-7Q2"/>
                     </connections>
                 </viewController>
