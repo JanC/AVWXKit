@@ -91,10 +91,11 @@ public struct AVWXClient {
     }
     
     public func fetchMetar(forIcao icao: String, options: MetarOptions = [], completion: @escaping (Result<Metar>) -> () ) {
-        
+        print("Requesting METAR for \(icao) with options \(options)")
         let endpoint = Endpoint.metar(icao, options)
         
         fetch(endpoint: endpoint) { (result: Result<Metar>) in
+            print("Requesting METAR for \(icao) with options \(options) done: \(result)")
             completion(result)
         }
     }

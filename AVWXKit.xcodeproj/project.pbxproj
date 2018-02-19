@@ -112,7 +112,7 @@
 		8ABB6DED20333EF800A466D8 /* AVWXClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVWXClient.swift; sourceTree = "<group>"; };
 		8ABB6DEF203345BA00A466D8 /* AVWXClientSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVWXClientSpecs.swift; sourceTree = "<group>"; };
 		8ABB6DF1203362E500A466D8 /* EndpointSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointSpecs.swift; sourceTree = "<group>"; };
-		8ABB6DF7203426B200A466D8 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ABB6DF7203426B200A466D8 /* AVWXSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVWXSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ABB6DF9203426B200A466D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ABB6DFB203426B200A466D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8ABB6DFE203426B200A466D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 			children = (
 				8AACF1782032DE1400732E86 /* AVWXKit.framework */,
 				8AACF19A2032E11400732E86 /* AVWXKitTests.xctest */,
-				8ABB6DF7203426B200A466D8 /* SampleApp.app */,
+				8ABB6DF7203426B200A466D8 /* AVWXSampleApp.app */,
 				8AF2FF63203B062200BD265A /* AVWXKitRx.framework */,
 			);
 			name = Products;
@@ -340,9 +340,9 @@
 			productReference = 8AACF19A2032E11400732E86 /* AVWXKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8ABB6DF6203426B200A466D8 /* SampleApp */ = {
+		8ABB6DF6203426B200A466D8 /* AVWXSampleApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8ABB6E06203426B200A466D8 /* Build configuration list for PBXNativeTarget "SampleApp" */;
+			buildConfigurationList = 8ABB6E06203426B200A466D8 /* Build configuration list for PBXNativeTarget "AVWXSampleApp" */;
 			buildPhases = (
 				8ABB6DF3203426B200A466D8 /* Sources */,
 				8ABB6DF4203426B200A466D8 /* Frameworks */,
@@ -355,9 +355,9 @@
 				8ACEC54920348C8700892F13 /* PBXTargetDependency */,
 				8AF2FF69203B062200BD265A /* PBXTargetDependency */,
 			);
-			name = SampleApp;
+			name = AVWXSampleApp;
 			productName = SampleApp;
-			productReference = 8ABB6DF7203426B200A466D8 /* SampleApp.app */;
+			productReference = 8ABB6DF7203426B200A466D8 /* AVWXSampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8AF2FF62203B062200BD265A /* AVWXKitRx */ = {
@@ -424,7 +424,7 @@
 				8AACF1772032DE1400732E86 /* AVWXKit */,
 				8AF2FF62203B062200BD265A /* AVWXKitRx */,
 				8AACF1992032E11400732E86 /* AVWXKitTests */,
-				8ABB6DF6203426B200A466D8 /* SampleApp */,
+				8ABB6DF6203426B200A466D8 /* AVWXSampleApp */,
 			);
 		};
 /* End PBXProject section */
@@ -862,7 +862,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8ABB6E06203426B200A466D8 /* Build configuration list for PBXNativeTarget "SampleApp" */ = {
+		8ABB6E06203426B200A466D8 /* Build configuration list for PBXNativeTarget "AVWXSampleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8ABB6E07203426B200A466D8 /* Debug */,
