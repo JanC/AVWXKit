@@ -9,6 +9,7 @@
 import Foundation
 import Quick
 import Nimble
+import CoreLocation
 @testable import AVWXKit
 
 class EndpointSpecs: QuickSpec {
@@ -16,7 +17,7 @@ class EndpointSpecs: QuickSpec {
     let baseURL = URL(string: "https://avwx.rest/api/")!
     override func spec() {
         
-        fdescribe("metar endpoint") {
+        describe("metar endpoint") {
             context("with icao") {
                 var url: URL!
                 beforeEach {
@@ -25,6 +26,18 @@ class EndpointSpecs: QuickSpec {
 
                 it("returns a url with icao") {
                     expect(url.absoluteString).to(equal("https://avwx.rest/api/metar/KSBP"))
+                }
+            }
+            
+            context("with coordinates") {
+                var url: URL!
+                beforeEach {
+                    let coordinates = CLLocationCoordinate2D(latitude: 35.2371234, longitude: -120.6441234)
+                    url = AVWXClient.Endpoint.metarCoordintes(coordinates, []).url(baseURL: self.baseURL)
+                }
+                
+                it("returns a url with icao") {
+                    expect(url.absoluteString).to(equal("https://avwx.rest/api/metar/35.237,-120.644"))
                 }
             }
             

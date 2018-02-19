@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 public struct AVWXClient {
     
@@ -60,29 +61,40 @@ public struct AVWXClient {
     enum Endpoint {
         
         case metar(String, MetarOptions)
+        case metarCoordintes(CLLocationCoordinate2D, MetarOptions)
         case taf(String)
         
         func url(baseURL: URL) -> URL {
             switch self {
             case .metar(let icao, let options):
-                
                 var fullUrl = baseURL.appendingPathComponent("metar/\(icao)")
-                
-                if
-                    let optionValues = options.string(),
-                    var components = URLComponents(url: fullUrl, resolvingAgainstBaseURL: false)
-                {
-                    components.queryItems =  [URLQueryItem(name: "options", value: optionValues)]
-                    if let url = components.url {
-                        fullUrl = url
-                    }
-                }
+                fullUrl = Endpoint.addOptions(options: options, to: fullUrl)
                 return fullUrl
                 
+            case .metarCoordintes(let coordinates, let options):
+                let formattedLat = String(format: "%0.3f", coordinates.latitude)
+                let formattedLong = String(format: "%0.3f", coordinates.longitude)
+                var fullUrl = baseURL.appendingPathComponent("metar/\(formattedLat),\(formattedLong)")
+                fullUrl = Endpoint.addOptions(options: options, to: fullUrl)
+                return fullUrl
+
                 
             case .taf(let icao):
                 return baseURL.appendingPathComponent("taf/\(icao)")
             }
+        }
+        private static func addOptions(options: MetarOptions, to url: URL) -> URL {
+            var resultUrl = url
+            if
+                let optionValues = options.string(),
+                var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+            {
+                components.queryItems =  [URLQueryItem(name: "options", value: optionValues)]
+                if let url = components.url {
+                    resultUrl = url
+                }
+            }
+            return resultUrl
         }
     }
     
@@ -99,6 +111,17 @@ public struct AVWXClient {
             completion(result)
         }
     }
+    
+    public func fetchMetar(at coordinates: CLLocationCoordinate2D, options: MetarOptions = [], completion: @escaping (Result<Metar>) -> () ) {
+        print("Requesting METAR at \(coordinates) with options \(options)")
+        let endpoint = Endpoint.metarCoordintes(coordinates, options)
+        
+        fetch(endpoint: endpoint) { (result: Result<Metar>) in
+            print("Requesting METAR at \(coordinates) with options \(options) done: \(result)")
+            completion(result)
+        }
+    }
+    
     func fetch<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T>) -> () ) {
         let task = session.dataTask(with: endpoint.url(baseURL: baseURL)) { (data, response, error) in
             if let error = error {
