@@ -19,7 +19,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AVWXSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,6 +60,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3n-N3-IFm">
                                                 <rect key="frame" x="248" y="0.0" width="95" height="30"/>
                                                 <state key="normal" title="Request"/>
+                                                <connections>
+                                                    <action selector="requestByCoordinatesActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P4J-7N-X4a"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -98,6 +101,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="coordinatesRequestButton" destination="Q3n-N3-IFm" id="Pj8-d8-RPP"/>
+                        <outlet property="coordinatesTextField" destination="WtQ-rH-dj5" id="yoo-Sa-dS1"/>
                         <outlet property="icaoTextField" destination="Qpy-Ko-RXV" id="j3g-ZS-qLD"/>
                         <outlet property="metarRequestButton" destination="WPC-wY-HKD" id="5UD-sz-cfp"/>
                         <outlet property="textView" destination="tuo-93-UI5" id="FAE-VB-7Q2"/>

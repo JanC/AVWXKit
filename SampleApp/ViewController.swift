@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CoreLocation
 
 import AVWXKit
 import AVWXKitRx
@@ -20,7 +21,9 @@ class ViewController: UIViewController {
     
     @IBOutlet var textView: UITextView!
     @IBOutlet var icaoTextField: UITextField!
+    @IBOutlet var coordinatesTextField: UITextField!
     @IBOutlet var metarRequestButton: UIButton!
+    @IBOutlet var coordinatesRequestButton: UIButton!
     
     var usernameTextField: UITextField!
     var passwordTextField: UITextField!
@@ -42,16 +45,50 @@ class ViewController: UIViewController {
     // MARK: - RxSwift
     
     private func setupValidation() {
-        let icaoValid = icaoTextField
+        icaoTextField
             .rx
             .text
             .map { value in
                 return value != nil  && value!.count > 0
-        }
-            icaoValid.subscribe(onNext: { (valid) in
-            self.metarRequestButton.isEnabled = valid
-        }).disposed(by: disposeBag)
+            }
+            .subscribe(onNext: { (valid) in
+                self.metarRequestButton.isEnabled = valid
+            }).disposed(by: disposeBag)
         
+        coordinatesTextField
+            .rx
+            .text
+            .map { value in
+                guard let coordinates = value else { return false }
+                return CLLocationCoordinate2D(coordinatesString: coordinates) != nil
+            }
+            .subscribe(onNext: { valid in
+               self.coordinatesRequestButton.isEnabled = valid
+            }).disposed(by: disposeBag)
+    }
+    
+    @IBAction func requestByCoordinatesAction(sender: Any) {
+        
+        MBProgressHUD.showAdded(to: view, animated: true)
+        
+        guard let coordinates = CLLocationCoordinate2D(coordinatesString: coordinatesTextField.text!) else { return }
+        
+        client.fetchMetar(at: coordinates, options: [.speech, .info])
+            .observeOn(MainScheduler.instance)
+            .map { $0.rawReport }
+            .subscribe(onSuccess: { [weak self] metar in
+                
+                guard let sself = self else { return }
+                sself.textView.text = metar
+                MBProgressHUD.hide(for: sself.view, animated: true)
+                
+                }, onError: { [weak self] error in
+                    
+                    guard let sself = self else { return }
+                    MBProgressHUD.hide(for: sself.view, animated: true)
+                    sself.showMessage("Error", description: error.localizedDescription)
+                    
+            }).disposed(by: disposeBag)
     }
     
     @IBAction func fetchAction(sender: Any) {
@@ -62,10 +99,13 @@ class ViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .map { $0.rawReport }
             .subscribe(onSuccess: { [weak self] metar in
+                
                 guard let sself = self else { return }
                 sself.textView.text = metar
                 MBProgressHUD.hide(for: sself.view, animated: true)
+                
             }, onError: { [weak self] error in
+                
                 guard let sself = self else { return }
                 MBProgressHUD.hide(for: sself.view, animated: true)
                 sself.showMessage("Error", description: error.localizedDescription)
@@ -110,6 +150,22 @@ class ViewController: UIViewController {
         myUtterance = AVSpeechUtterance(string: phrase)
         myUtterance.rate = AVSpeechUtteranceDefaultSpeechRate
         synth.speak(myUtterance)
+    }
+    
+}
+
+extension CLLocationCoordinate2D {
+    
+    /// 35.237,-120.644
+    init?(coordinatesString: String) {
+        let stringArray = coordinatesString.split(separator: ",")
+        guard
+            stringArray.count == 2,
+            let lat = Double(stringArray[0]),
+            let lon = Double(stringArray[1]) else {
+                return nil
+        }
+        self.init(latitude: lat, longitude: lon)
     }
     
 }
