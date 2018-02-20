@@ -16,6 +16,7 @@ import AVWXKitRx
 import RxCocoa
 import RxSwift
 import MBProgressHUD
+import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -40,6 +41,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupValidation()
+        setupActions()
     }
     
     // MARK: - RxSwift
@@ -67,9 +69,36 @@ class ViewController: UIViewController {
             }).disposed(by: disposeBag)
     }
     
+    private func setupActions() {
+        
+//        // this doesnt work as on the 1st API error the button observable completes
+//        metarRequestButton.rx.tap
+//            .withLatestFrom(icaoTextField.rx.text.orEmpty)
+//            .filter { $0.count > 0 }
+//            .flatMap { icao -> Single<Metar> in
+//                SVProgressHUD.show()
+//                return self.client.fetchMetar(forIcao: icao, options: [.speech, .info])
+//            }
+//            .map { $0.rawReport }
+//            .observeOn(MainScheduler.instance)
+//            .subscribe(onNext: { [weak self] result in
+//                SVProgressHUD.dismiss()
+//
+//                guard let sself = self else { return }
+//                sself.textView.text = result
+//
+//            }, onError: { [weak self] error in
+//                guard let sself = self else { return }
+//                SVProgressHUD.dismiss()
+//                sself.showMessage("Error", description: error.localizedDescription)
+//            }).disposed(by: disposeBag)
+    }
+        
+    
+    
     @IBAction func requestByCoordinatesAction(sender: Any) {
         
-        MBProgressHUD.showAdded(to: view, animated: true)
+        SVProgressHUD.show()
         
         guard let coordinates = CLLocationCoordinate2D(coordinatesString: coordinatesTextField.text!) else { return }
         
@@ -80,12 +109,12 @@ class ViewController: UIViewController {
                 
                 guard let sself = self else { return }
                 sself.textView.text = metar
-                MBProgressHUD.hide(for: sself.view, animated: true)
+                SVProgressHUD.dismiss()
                 
                 }, onError: { [weak self] error in
                     
                     guard let sself = self else { return }
-                    MBProgressHUD.hide(for: sself.view, animated: true)
+                    SVProgressHUD.dismiss()
                     sself.showMessage("Error", description: error.localizedDescription)
                     
             }).disposed(by: disposeBag)
@@ -93,7 +122,7 @@ class ViewController: UIViewController {
     
     @IBAction func fetchAction(sender: Any) {
         
-        MBProgressHUD.showAdded(to: view, animated: true)
+        SVProgressHUD.show()
         
         client.fetchMetar(forIcao: icaoTextField.text!, options: [.speech, .info])
             .observeOn(MainScheduler.instance)
@@ -102,12 +131,12 @@ class ViewController: UIViewController {
                 
                 guard let sself = self else { return }
                 sself.textView.text = metar
-                MBProgressHUD.hide(for: sself.view, animated: true)
+                SVProgressHUD.dismiss()
                 
             }, onError: { [weak self] error in
                 
                 guard let sself = self else { return }
-                MBProgressHUD.hide(for: sself.view, animated: true)
+                SVProgressHUD.dismiss()
                 sself.showMessage("Error", description: error.localizedDescription)
                 
             }).disposed(by: disposeBag)
