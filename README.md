@@ -44,16 +44,29 @@ import AVWXKit
 
 let client = AVWXClient()
 
+// By ICAO
+
 client.fetchMetar(forIcao: "KSBP", options: [.speech, .info]) { result in
     switch result {
     case .success(let metar):
         print("Metar: \(metar.rawReport)")
-        break;
     case .failure(let error):
         print("Could not fetch: \(error)")
-        break
     }
 }
+
+// By Coordinates
+let coordinates = CLLocationCoordinate2D(latitude: 35.237, longitude: -120.644)
+client.fetchMetar(at: coordinates, options: [.info, .speech]) { (result) in
+    switch result {
+    case .success(let metar):
+        print("Metar: \(metar.rawReport)")
+    case .failure(let error):
+        print("Could not fetch: \(error)")
+    }
+}
+
+
 ```
 
 ## RxSwift example
