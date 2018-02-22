@@ -40,6 +40,10 @@ class DeserialisationSpecs: QuickSpec {
                     expect(metar?.altimeter).to(equal("2995"))
                 }
                 
+                it("parses the date") {
+                    expect(metar?.metarDate).notTo(beNil())
+                }
+                
                 it("parses the dew point") {
                     expect(metar?.dewPoint).to(equal("04"))
                 }

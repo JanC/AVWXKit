@@ -103,27 +103,26 @@ public struct AVWXClient {
     }
     
     public func fetchMetar(forIcao icao: String, options: MetarOptions = [], completion: @escaping (Result<Metar>) -> () ) {
-        print("Requesting METAR for \(icao) with options \(options)")
         let endpoint = Endpoint.metar(icao, options)
         
         fetch(endpoint: endpoint) { (result: Result<Metar>) in
-            print("Requesting METAR for \(icao) with options \(options) done: \(result)")
+            print("METAR done: \(result)")
             completion(result)
         }
     }
     
     public func fetchMetar(at coordinates: CLLocationCoordinate2D, options: MetarOptions = [], completion: @escaping (Result<Metar>) -> () ) {
-        print("Requesting METAR at \(coordinates) with options \(options)")
         let endpoint = Endpoint.metarCoordintes(coordinates, options)
-        
         fetch(endpoint: endpoint) { (result: Result<Metar>) in
-            print("Requesting METAR at \(coordinates) with options \(options) done: \(result)")
+            print("METAR done: \(result)")
             completion(result)
         }
     }
     
     func fetch<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T>) -> () ) {
-        let task = session.dataTask(with: endpoint.url(baseURL: baseURL)) { (data, response, error) in
+        let url = endpoint.url(baseURL: baseURL)
+        debugPrint("METAR GET \(url.absoluteString)")
+        let task = session.dataTask(with:url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
                 return

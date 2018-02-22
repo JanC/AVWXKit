@@ -71,13 +71,19 @@ class ViewController: UIViewController {
     
     private func setupActions() {
         
-//        // this doesnt work as on the 1st API error the button observable completes
+        // this doesnt work as on the 1st API error the button observable completes
 //        metarRequestButton.rx.tap
 //            .withLatestFrom(icaoTextField.rx.text.orEmpty)
 //            .filter { $0.count > 0 }
 //            .flatMap { icao -> Single<Metar> in
 //                SVProgressHUD.show()
-//                return self.client.fetchMetar(forIcao: icao, options: [.speech, .info])
+//
+//                return self.client.fetchMetar(forIcao: icao, options: [.speech, .info]).do(onError: { (error) in
+//                    SVProgressHUD.dismiss()
+//                    print("API error: ", error)
+//                }).catchError({ (_) -> PrimitiveSequence<SingleTrait, Metar> in
+//
+//                })
 //            }
 //            .map { $0.rawReport }
 //            .observeOn(MainScheduler.instance)
@@ -93,7 +99,7 @@ class ViewController: UIViewController {
 //                sself.showMessage("Error", description: error.localizedDescription)
 //            }).disposed(by: disposeBag)
     }
-        
+    
     
     
     @IBAction func requestByCoordinatesAction(sender: Any) {
@@ -104,7 +110,7 @@ class ViewController: UIViewController {
         
         client.fetchMetar(at: coordinates, options: [.speech, .info])
             .observeOn(MainScheduler.instance)
-            .map { $0.rawReport }
+            .map { $0.rawReport + "\n\n" + $0.speech! + "\n\n" + "\($0.minutesOld)min"}
             .subscribe(onSuccess: { [weak self] metar in
                 
                 guard let sself = self else { return }
@@ -126,7 +132,7 @@ class ViewController: UIViewController {
         
         client.fetchMetar(forIcao: icaoTextField.text!, options: [.speech, .info])
             .observeOn(MainScheduler.instance)
-            .map { $0.rawReport }
+            .map { $0.rawReport + "\n\n" + $0.speech! + "\n\n" + "\($0.minutesOld) min"}
             .subscribe(onSuccess: { [weak self] metar in
                 
                 guard let sself = self else { return }

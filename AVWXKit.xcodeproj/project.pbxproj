@@ -40,6 +40,7 @@
 		8AF2FF6F203B064400BD265A /* AVWXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1782032DE1400732E86 /* AVWXKit.framework */; };
 		8AF2FF73203B163D00BD265A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD91CAB203473D00064AB2B /* RxSwift.framework */; };
 		8AF2FF75203B166E00BD265A /* AVWXClient-rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2FF74203B166E00BD265A /* AVWXClient-rx.swift */; };
+		8AFC8EA6203DF0AD00372685 /* MetarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC8EA5203DF0AD00372685 /* MetarDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		8AF2FF65203B062200BD265A /* AVWXKitRx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVWXKitRx.h; sourceTree = "<group>"; };
 		8AF2FF66203B062200BD265A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AF2FF74203B166E00BD265A /* AVWXClient-rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVWXClient-rx.swift"; sourceTree = "<group>"; };
+		8AFC8EA5203DF0AD00372685 /* MetarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetarDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				8AACF1842032DF7C00732E86 /* Metar.swift */,
+				8AFC8EA5203DF0AD00372685 /* MetarDate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ABB6DEE20333EF800A466D8 /* AVWXClient.swift in Sources */,
+				8AFC8EA6203DF0AD00372685 /* MetarDate.swift in Sources */,
 				8AACF1852032DF7C00732E86 /* Metar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

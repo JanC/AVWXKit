@@ -15,7 +15,7 @@ public struct Metar: Decodable {
         case vfr = "VFR"
         case mfr = "MVFR"
         case ifr = "IFR"
-        case mifr = "MIFR"
+        case lifr = "LIFR"
     }
     
     public struct Info: Decodable {
@@ -37,6 +37,12 @@ public struct Metar: Decodable {
     public let windSpeed: String
     public let windVariableDirection: [String]
     
+    public var date: Date {
+        return metarDate.date
+    }
+    let metarDate: MetarDate
+    
+    
     /// if requested with the "speech" option
     public let speech: String?
     
@@ -56,5 +62,17 @@ public struct Metar: Decodable {
         case windVariableDirection = "Wind-Variable-Dir"
         case speech         = "Speech"
         case info           = "Info"
+        case metarDate      = "Time"
+    }
+}
+
+
+// MARK: - Helpers
+public extension Metar {
+
+    public var minutesOld: Int {
+        let now = Date()
+        let oldSec = now.timeIntervalSince(date) / 60
+        return Int(oldSec)
     }
 }
