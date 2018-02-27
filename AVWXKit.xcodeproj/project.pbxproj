@@ -41,6 +41,8 @@
 		8AF2FF73203B163D00BD265A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD91CAB203473D00064AB2B /* RxSwift.framework */; };
 		8AF2FF75203B166E00BD265A /* AVWXClient-rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2FF74203B166E00BD265A /* AVWXClient-rx.swift */; };
 		8AFC8EA6203DF0AD00372685 /* MetarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC8EA5203DF0AD00372685 /* MetarDate.swift */; };
+		C4D879C9892D9B22B9A00F30 /* metar-response-valid-translate.json in Resources */ = {isa = PBXBuildFile; fileRef = C4D87742DF749B8102E25580 /* metar-response-valid-translate.json */; };
+		C4D87C5C654A1A8DA2216356 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8762D7934037D1744E53F /* Translations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		8AF2FF66203B062200BD265A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AF2FF74203B166E00BD265A /* AVWXClient-rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVWXClient-rx.swift"; sourceTree = "<group>"; };
 		8AFC8EA5203DF0AD00372685 /* MetarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetarDate.swift; sourceTree = "<group>"; };
+		C4D8762D7934037D1744E53F /* Translations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
+		C4D87742DF749B8102E25580 /* metar-response-valid-translate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "metar-response-valid-translate.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 			children = (
 				8AACF1842032DF7C00732E86 /* Metar.swift */,
 				8AFC8EA5203DF0AD00372685 /* MetarDate.swift */,
+				C4D8762D7934037D1744E53F /* Translations.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				8AACF1B02032E27A00732E86 /* metar-response-valid.json */,
+				C4D87742DF749B8102E25580 /* metar-response-valid-translate.json */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -445,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ABB6DEB2032E75900A466D8 /* metar-response-valid.json in Resources */,
+				C4D879C9892D9B22B9A00F30 /* metar-response-valid-translate.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +482,7 @@
 				8ABB6DEE20333EF800A466D8 /* AVWXClient.swift in Sources */,
 				8AFC8EA6203DF0AD00372685 /* MetarDate.swift in Sources */,
 				8AACF1852032DF7C00732E86 /* Metar.swift in Sources */,
+				C4D87C5C654A1A8DA2216356 /* Translations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

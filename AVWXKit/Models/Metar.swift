@@ -36,6 +36,8 @@ public struct Metar: Decodable {
     public let windGust: String
     public let windSpeed: String
     public let windVariableDirection: [String]
+
+
     
     public var date: Date {
         return metarDate.date
@@ -48,6 +50,9 @@ public struct Metar: Decodable {
     
     /// if requested with the "info" option
     public let info: Info?
+
+    // if requested with the "translate" option
+    public let translations: Translations?
     
     enum CodingKeys: String, CodingKey {
         case rawReport      = "Raw-Report"
@@ -63,6 +68,7 @@ public struct Metar: Decodable {
         case speech         = "Speech"
         case info           = "Info"
         case metarDate      = "Time"
+        case translations   = "Translations"
     }
 }
 

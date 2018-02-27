@@ -1,0 +1,57 @@
+{
+    "Altimeter": "2983",
+    "Cloud-List": [
+        [
+            "SCT",
+            "017"
+        ],
+        [
+            "BKN",
+            "024"
+        ],
+        [
+            "OVC",
+            "035"
+        ]
+    ],
+    "Dewpoint": "01",
+    "Flight-Rules": "MVFR",
+    "Meta": {
+        "Cache-Timestamp": "Tue, 27 Feb 2018 09:30:00 GMT",
+        "Timestamp": "Tue, 27 Feb 2018 09:30:23 GMT"
+    },
+    "Other-List": [
+        "-RA"
+    ],
+    "Raw-Report": "KVCV 270915Z AUTO 00000KT 7SM -RA SCT017 BKN024 OVC035 03/01 A2983 RMK AO2",
+    "Remarks": "RMK AO2",
+    "Remarks-Info": {},
+    "Runway-Vis-List": [],
+    "Station": "KVCV",
+    "Temperature": "03",
+    "Time": "270915Z",
+    "Translations": {
+        "Altimeter": "29.83inHg (1010hPa)",
+        "Clouds": "Scattered clouds at 1700ft, Broken layer at 2400ft, Overcast layer at 3500ft - Reported AGL",
+        "Dewpoint": "01C (34F)",
+        "Other": "Light Rain",
+        "Remarks": {
+            "AO2": "Automated with precipitation sensor"
+        },
+        "Temperature": "03C (37F)",
+        "Visibility": "7sm (11.3km)",
+        "Wind": "Calm"
+    },
+    "Units": {
+        "Altimeter": "inHg",
+        "Altitude": "ft",
+        "Temperature": "C",
+        "Visibility": "sm",
+        "Wind-Speed": "kt"
+    },
+    "Visibility": "7",
+    "Wind-Direction": "000",
+    "Wind-Gust": "",
+    "Wind-Speed": "00",
+    "Wind-Variable-Dir": []
+}

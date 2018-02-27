@@ -52,6 +52,27 @@ class DeserialisationSpecs: QuickSpec {
                     expect(metar?.flightRules).to(equal(.vfr))
                 }
             }
+
+            fcontext("given a valid metar with translation") {
+                var metar: Metar?
+                beforeEach {
+                    let data = try! Data(contentsOf:Bundle(for: type(of: self)).url(forResource: "metar-response-valid-translate", withExtension: "json")!)
+                    do {
+                        metar = try decoder.decode(Metar.self, from: data)
+                    } catch {
+                        print(error)
+                    }
+
+                }
+
+                it("parses the traslations") {
+                    expect(metar?.translations).notTo(beNil())
+                }
+
+                it("parses the altimeter") {
+                    expect(metar?.translations?.altimeter).to(equal("29.83inHg (1010hPa)"))
+                }
+            }
         }
     }
 }
