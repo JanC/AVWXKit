@@ -41,8 +41,11 @@
 		8AF2FF73203B163D00BD265A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD91CAB203473D00064AB2B /* RxSwift.framework */; };
 		8AF2FF75203B166E00BD265A /* AVWXClient-rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2FF74203B166E00BD265A /* AVWXClient-rx.swift */; };
 		8AFC8EA6203DF0AD00372685 /* MetarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC8EA5203DF0AD00372685 /* MetarDate.swift */; };
+		C4D878B52941D4C35B84FF06 /* MetarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8783A29BC449406E3BAD2 /* MetarViewModel.swift */; };
 		C4D879C9892D9B22B9A00F30 /* metar-response-valid-translate.json in Resources */ = {isa = PBXBuildFile; fileRef = C4D87742DF749B8102E25580 /* metar-response-valid-translate.json */; };
 		C4D87C5C654A1A8DA2216356 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8762D7934037D1744E53F /* Translations.swift */; };
+		C4D87C5CFE7649D4A8C7234D /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8736778BC12705F67535C /* EntryTableViewCell.swift */; };
+		C4D87D69C2C5739327015CA9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D879EEF0A28E5661A93849 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,7 @@
 
 /* Begin PBXFileReference section */
 		8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		8A6D157A20456ED10068C6F6 /* AVWXKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AVWXKit.xcodeproj; sourceTree = "<group>"; };
 		8AACF1782032DE1400732E86 /* AVWXKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVWXKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AACF17B2032DE1400732E86 /* AVWXKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVWXKit.h; sourceTree = "<group>"; };
 		8AACF17C2032DE1400732E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,8 +135,11 @@
 		8AF2FF66203B062200BD265A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AF2FF74203B166E00BD265A /* AVWXClient-rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVWXClient-rx.swift"; sourceTree = "<group>"; };
 		8AFC8EA5203DF0AD00372685 /* MetarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetarDate.swift; sourceTree = "<group>"; };
+		C4D8736778BC12705F67535C /* EntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		C4D8762D7934037D1744E53F /* Translations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
 		C4D87742DF749B8102E25580 /* metar-response-valid-translate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "metar-response-valid-translate.json"; sourceTree = "<group>"; };
+		C4D8783A29BC449406E3BAD2 /* MetarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetarViewModel.swift; sourceTree = "<group>"; };
+		C4D879EEF0A28E5661A93849 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,9 +186,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A6D157B20456ED10068C6F6 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8AACF16E2032DE1400732E86 = {
 			isa = PBXGroup;
 			children = (
+				8A6D157A20456ED10068C6F6 /* AVWXKit.xcodeproj */,
 				8AACF17A2032DE1400732E86 /* AVWXKit */,
 				8AF2FF64203B062200BD265A /* AVWXKitRx */,
 				8AACF19B2032E11400732E86 /* AVWXKitTests */,
@@ -276,6 +289,9 @@
 				8ABB6E00203426B200A466D8 /* Assets.xcassets */,
 				8ABB6E02203426B200A466D8 /* LaunchScreen.storyboard */,
 				8ABB6E05203426B200A466D8 /* Info.plist */,
+				C4D8783A29BC449406E3BAD2 /* MetarViewModel.swift */,
+				C4D879EEF0A28E5661A93849 /* Extensions.swift */,
+				C4D8779B5FE9135DF843D3F1 /* Views */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -288,6 +304,14 @@
 				8AF2FF74203B166E00BD265A /* AVWXClient-rx.swift */,
 			);
 			path = AVWXKitRx;
+			sourceTree = "<group>";
+		};
+		C4D8779B5FE9135DF843D3F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4D8736778BC12705F67535C /* EntryTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +452,12 @@
 			mainGroup = 8AACF16E2032DE1400732E86;
 			productRefGroup = 8AACF1792032DE1400732E86 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8A6D157B20456ED10068C6F6 /* Products */;
+					ProjectRef = 8A6D157A20456ED10068C6F6 /* AVWXKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8AACF1772032DE1400732E86 /* AVWXKit */,
@@ -502,6 +532,9 @@
 			files = (
 				8ABB6DFC203426B200A466D8 /* ViewController.swift in Sources */,
 				8ABB6DFA203426B200A466D8 /* AppDelegate.swift in Sources */,
+				C4D878B52941D4C35B84FF06 /* MetarViewModel.swift in Sources */,
+				C4D87D69C2C5739327015CA9 /* Extensions.swift in Sources */,
+				C4D87C5CFE7649D4A8C7234D /* EntryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

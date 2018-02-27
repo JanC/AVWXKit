@@ -6,15 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Menlo.ttc">
-            <string>Menlo-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -74,22 +70,64 @@
                                     <constraint firstAttribute="height" constant="80" id="7xK-jh-1sw"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tuo-93-UI5">
-                                <rect key="frame" x="16" y="186" width="343" height="461"/>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xtY-mE-gGZ">
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EntryCell" rowHeight="75" id="1k3-7e-q5U" customClass="EntryTableViewCell" customModule="AVWXSampleApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1k3-7e-q5U" id="hIf-tH-zfV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5i-Vc-4qc">
+                                                    <rect key="frame" x="15" y="8" width="345" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="0T5-8n-V4H"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCm-f6-A5E">
+                                                    <rect key="frame" x="15" y="30" width="345" height="36.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RCm-f6-A5E" firstAttribute="trailing" secondItem="hIf-tH-zfV" secondAttribute="trailingMargin" id="8df-fR-QcP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="T5i-Vc-4qc" secondAttribute="trailing" id="FQm-oM-74Q"/>
+                                                <constraint firstItem="RCm-f6-A5E" firstAttribute="top" secondItem="T5i-Vc-4qc" secondAttribute="bottom" constant="2" id="bsZ-MV-BoP"/>
+                                                <constraint firstAttribute="bottom" secondItem="RCm-f6-A5E" secondAttribute="bottom" constant="8" id="d9P-D3-AW6"/>
+                                                <constraint firstItem="T5i-Vc-4qc" firstAttribute="top" secondItem="hIf-tH-zfV" secondAttribute="top" constant="8" id="hwD-Wa-mdI"/>
+                                                <constraint firstItem="RCm-f6-A5E" firstAttribute="leading" secondItem="hIf-tH-zfV" secondAttribute="leadingMargin" id="jSf-xo-nsW"/>
+                                                <constraint firstItem="T5i-Vc-4qc" firstAttribute="leading" secondItem="hIf-tH-zfV" secondAttribute="leadingMargin" id="nma-e6-I4Y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="entryTitleLabel" destination="T5i-Vc-4qc" id="4SC-JZ-TTg"/>
+                                            <outlet property="entryValueLabel" destination="RCm-f6-A5E" id="zis-87-zF9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gOh-UC-ibr"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="enH-Rn-l9d"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tuo-93-UI5" secondAttribute="bottom" constant="20" id="9so-OR-FPX"/>
+                            <constraint firstItem="xtY-mE-gGZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Dkb-ra-owr"/>
                             <constraint firstItem="KR7-Ez-2zD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="E2N-ds-HKk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tuo-93-UI5" secondAttribute="trailing" constant="16" id="Jox-Cz-sQo"/>
-                            <constraint firstItem="tuo-93-UI5" firstAttribute="top" secondItem="KR7-Ez-2zD" secondAttribute="bottom" constant="30" id="VaA-Rr-45l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KR7-Ez-2zD" secondAttribute="trailing" constant="16" id="aE0-0b-nbG"/>
+                            <constraint firstItem="xtY-mE-gGZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="b8l-iY-r1q"/>
                             <constraint firstItem="KR7-Ez-2zD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="iKy-9p-dcd"/>
-                            <constraint firstItem="tuo-93-UI5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="q2a-u9-ySV"/>
+                            <constraint firstItem="xtY-mE-gGZ" firstAttribute="top" secondItem="KR7-Ez-2zD" secondAttribute="bottom" constant="8" id="spy-Ix-sVt"/>
+                            <constraint firstItem="xtY-mE-gGZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tHu-8C-deB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -105,7 +143,7 @@
                         <outlet property="coordinatesTextField" destination="WtQ-rH-dj5" id="yoo-Sa-dS1"/>
                         <outlet property="icaoTextField" destination="Qpy-Ko-RXV" id="j3g-ZS-qLD"/>
                         <outlet property="metarRequestButton" destination="WPC-wY-HKD" id="5UD-sz-cfp"/>
-                        <outlet property="textView" destination="tuo-93-UI5" id="FAE-VB-7Q2"/>
+                        <outlet property="tableView" destination="xtY-mE-gGZ" id="zzU-cF-bUi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
