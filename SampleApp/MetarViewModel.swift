@@ -45,6 +45,10 @@ struct MetarViewModel {
         values.append(EntryViewModel(title: "Report", value: metar.rawReport))
         values.append(EntryViewModel(title: "Remarks", value: metar.remarks))
 
+        if let speech = metar.speech {
+            values.append(EntryViewModel(title: "Speech", value: speech))
+        }
+
         if let translations = metar.translations {
             values.append(EntryViewModel(title: "Altimeter", value: translations.altimeter))
             values.append(EntryViewModel(title: "Temperature", value: translations.temperature))
