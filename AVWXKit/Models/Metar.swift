@@ -27,6 +27,7 @@ public struct Metar: Decodable {
     }
     
     public let rawReport: String
+    public let station: String
     public let remarks: String
     public let altimeter: String
     public let dewPoint: String
@@ -56,6 +57,7 @@ public struct Metar: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case rawReport      = "Raw-Report"
+        case station        = "Station"
         case altimeter      = "Altimeter"
         case dewPoint       = "Dewpoint"
         case flightRules    = "Flight-Rules"
