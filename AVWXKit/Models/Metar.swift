@@ -20,9 +20,13 @@ public struct Metar: Decodable {
     
     public struct Info: Decodable {
         public let name: String
+        public let city: String
+        public let icao: String
         
         enum CodingKeys: String, CodingKey {
             case name = "Name"
+            case city = "City"
+            case icao = "ICAO"
         }
     }
     
