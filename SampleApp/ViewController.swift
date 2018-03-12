@@ -14,7 +14,6 @@ import AVWXKitRx
 
 import RxCocoa
 import RxSwift
-import MBProgressHUD
 import SVProgressHUD
 
 class ViewController: UIViewController {
@@ -101,6 +100,7 @@ class ViewController: UIViewController {
             .subscribe(onSuccess: { [weak self] metar in
                 
                 guard let sself = self else { return }
+                sself.metar = metar
                 sself.viewModel =  MetarViewModel(metar: metar)
                 sself.tableView.reloadData()
                 SVProgressHUD.dismiss()

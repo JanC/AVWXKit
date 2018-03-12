@@ -134,7 +134,7 @@
                     <navigationItem key="navigationItem" id="5wn-YV-6pJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="play" id="aKA-eS-tAm">
                             <connections>
-                                <action selector="speekActionWithSender:" destination="BYZ-38-t0r" id="0eE-mM-GLR"/>
+                                <action selector="speakActionWithSender:" destination="BYZ-38-t0r" id="Tfi-aw-vPE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
