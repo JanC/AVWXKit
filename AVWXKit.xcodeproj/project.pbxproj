@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A2C03B1203C3388003CA0DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; };
 		8A2C03B2203C3388003CA0DE /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A6275F420DFF53800F48519 /* AVWXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1782032DE1400732E86 /* AVWXKit.framework */; };
 		8AACF17D2032DE1400732E86 /* AVWXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AACF17B2032DE1400732E86 /* AVWXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AACF1852032DF7C00732E86 /* Metar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AACF1842032DF7C00732E86 /* Metar.swift */; };
 		8AACF19F2032E11400732E86 /* AVWXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1782032DE1400732E86 /* AVWXKit.framework */; };
@@ -28,7 +29,6 @@
 		8ABB6DFF203426B200A466D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB6DFD203426B200A466D8 /* Main.storyboard */; };
 		8ABB6E01203426B200A466D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB6E00203426B200A466D8 /* Assets.xcassets */; };
 		8ABB6E04203426B200A466D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB6E02203426B200A466D8 /* LaunchScreen.storyboard */; };
-		8ACEC54620348C8700892F13 /* AVWXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1782032DE1400732E86 /* AVWXKit.framework */; };
 		8ACEC54720348C8700892F13 /* AVWXKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1782032DE1400732E86 /* AVWXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8AD91CAD203473DC0064AB2B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD91CAC203473D10064AB2B /* RxCocoa.framework */; };
 		8AD91CAE203473DC0064AB2B /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD91CAC203473D10064AB2B /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -166,11 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A2C03B1203C3388003CA0DE /* SVProgressHUD.framework in Frameworks */,
-				8ACEC54620348C8700892F13 /* AVWXKit.framework in Frameworks */,
+				8A6275F420DFF53800F48519 /* AVWXKit.framework in Frameworks */,
 				8AF2FF6A203B062200BD265A /* AVWXKitRx.framework in Frameworks */,
 				8AD91CAD203473DC0064AB2B /* RxCocoa.framework in Frameworks */,
 				8AD91CAF203473DC0064AB2B /* RxSwift.framework in Frameworks */,
-				8ACEC54620348C8700892F13 /* AVWXKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +417,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = AeroNav;
 				TargetAttributes = {
 					8AACF1772032DE1400732E86 = {
@@ -600,6 +599,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -607,6 +607,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -660,6 +661,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -667,6 +669,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
