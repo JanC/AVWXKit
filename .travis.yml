@@ -2,14 +2,19 @@ language: swift
 
 osx_image: xcode10.0
 
+cache:
+  directories:
+  - Carthage
+
 # Ensure that fastlane is at the latest version
 before_install:
+- bundle exec fastlane kit_carthage_build
 # - bundle update
 # - brew update && brew install swiftlint
 
 # Let fastlane set up the other dependency managers
 before_script:
-- bundle exec fastlane kit_carthage_build
+
 
 # Separate fastlane lanes so that they can be individually
 # tested one by one during development
