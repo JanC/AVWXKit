@@ -9,8 +9,6 @@ cache:
 # Ensure that fastlane is at the latest version
 before_install:
 - bundle exec fastlane kit_carthage_build
-# - bundle update
-# - brew update && brew install swiftlint
 
 # Let fastlane set up the other dependency managers
 before_script:
