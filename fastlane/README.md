@@ -39,10 +39,6 @@ e.g 'fastlane test xc_version:8.2'
 fastlane ios kit_compile
 ```
 Compiles the SDK project
-
-e.g: fastlane sdk_compile xc_version:7.3.1
-
-To list all versions: xcenv versions
 ### ios kit_swift_lint
 ```
 fastlane ios kit_swift_lint

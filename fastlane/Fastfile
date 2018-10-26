@@ -32,7 +32,7 @@ platform :ios do
   desc 'You can optionnaly specify the xcode version'
   desc "e.g 'fastlane test xc_version:8.2'"
   lane :kit_test do |options|
-      UI.message "Running tests with xcversion #{xc_version}"
+      UI.message "Running tests"
       scan(scheme: @sdk_scheme, project: "#{@sdk_project_name}", output_directory: @test_reports_dir, device: "iPhone 5s")
   end
 
@@ -40,8 +40,6 @@ platform :ios do
   # SDK Lanes
   #
   desc "Compiles the SDK project"
-  desc "e.g: fastlane sdk_compile xc_version:7.3.1"
-  desc "To list all versions: xcenv versions"
   lane :kit_compile do |options|
       xcclean(scheme: @sdk_scheme, workspace: @sdk_workspace)
       # we don't care about signing here, we just want to know if all compiles
@@ -50,6 +48,6 @@ platform :ios do
 
   desc "Runs SwiftLint"
   lane :kit_swift_lint do |options|
-      swiftlint
+      swiftlint(strict: true)
   end
 end
