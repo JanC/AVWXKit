@@ -14,5 +14,5 @@ before_script:
 # Separate fastlane lanes so that they can be individually
 # tested one by one during development
 script:
-- swiftlint
+- swiftlint --strict 
 #- bundle exec fastlane kit_test
