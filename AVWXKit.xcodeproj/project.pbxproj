@@ -343,6 +343,7 @@
 				8AACF1742032DE1400732E86 /* Frameworks */,
 				8AACF1752032DE1400732E86 /* Headers */,
 				8AACF1762032DE1400732E86 /* Resources */,
+				3D31BE792183178C0004FE56 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -503,6 +504,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D31BE792183178C0004FE56 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8AACF1732032DE1400732E86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -618,7 +640,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -680,7 +702,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -711,7 +733,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = G9MA9G2SST;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AVWXKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -735,7 +757,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = G9MA9G2SST;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AVWXKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -834,7 +856,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = G9MA9G2SST;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -862,7 +884,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = G9MA9G2SST;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
