@@ -1,6 +1,6 @@
 language: swift
 
-osx_image: xcode10.0
+osx_image: xcode10
 
 cache:
   directories:
@@ -11,7 +11,7 @@ before_install:
 - bundle exec fastlane kit_carthage_build
 
 # Let fastlane set up the other dependency managers
-before_script:
+# before_script:
 
 
 # Separate fastlane lanes so that they can be individually
