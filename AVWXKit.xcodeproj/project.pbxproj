@@ -129,7 +129,6 @@
 		8ABB6E05203426B200A466D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AD91CAB203473D00064AB2B /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		8AD91CAC203473D10064AB2B /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		8AF26BA8203B6DAE008A7688 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		8AF2FF63203B062200BD265A /* AVWXKitRx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVWXKitRx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF2FF65203B062200BD265A /* AVWXKitRx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVWXKitRx.h; sourceTree = "<group>"; };
 		8AF2FF66203B062200BD265A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,7 +199,6 @@
 				8ABB6DF8203426B200A466D8 /* SampleApp */,
 				8AACF1A82032E15300732E86 /* Frameworks */,
 				8AACF1792032DE1400732E86 /* Products */,
-				8AF26BA8203B6DAE008A7688 /* Cartfile */,
 				8AACF1952032DFE100732E86 /* Cartfile.private */,
 			);
 			sourceTree = "<group>";
