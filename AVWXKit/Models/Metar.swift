@@ -42,8 +42,6 @@ public struct Metar: Decodable {
     public let windSpeed: String
     public let windVariableDirection: [String]
 
-
-    
     public var date: Date {
         return metarDate.date
     }

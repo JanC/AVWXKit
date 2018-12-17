@@ -1,0 +1,53 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+@sdk_scheme = 'AVWXKit'
+@sdk_project_dir = 'AVWXKit'
+@sdk_project_name = 'AVWXKit.xcodeproj'
+
+platform :ios do
+  desc 'Builds the Carthage SDK Unit Test dependencies'
+  desc 'You can optionnaly specify the xcode version'
+  desc "e.g 'fastlane kit_carthage_build xc_version:9.3'"
+  lane :kit_carthage_build do |options|
+      carthage(platform: "iOS", verbose: false, use_binaries: false, cache_builds: true)
+  end
+
+
+  desc 'Runs all unit the tests and generates reports in `fastlane/reports`'
+  desc 'You can optionnaly specify the xcode version'
+  desc "e.g 'fastlane test xc_version:8.2'"
+  lane :kit_test do |options|
+      UI.message "Running tests"
+      scan(scheme: @sdk_scheme, project: "#{@sdk_project_name}", output_directory: @test_reports_dir, device: "iPhone 5s")
+  end
+
+  #
+  # SDK Lanes
+  #
+  desc "Compiles the SDK project"
+  lane :kit_compile do |options|
+      xcclean(scheme: @sdk_scheme, workspace: @sdk_workspace)
+      # we don't care about signing here, we just want to know if all compiles
+      xcodebuild(scheme: @sdk_scheme, workspace: @sdk_workspace, build_settings: { "CODE_SIGNING_REQUIRED" => "NO", "CODE_SIGN_IDENTITY" => "" })
+  end
+
+  desc "Runs SwiftLint"
+  lane :kit_swift_lint do |options|
+      swiftlint(strict: true)
+  end
+end

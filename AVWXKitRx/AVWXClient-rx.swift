@@ -21,10 +21,8 @@ extension AVWXClient {
                 switch result {
                 case .success(let metar):
                     observer(.success(metar))
-                    break
                 case .failure(let error):
                     observer(.error(error))
-                    break
                 }
             })
             return Disposables.create()
@@ -39,10 +37,8 @@ extension AVWXClient {
                 switch result {
                 case .success(let metar):
                     observer(.success(metar))
-                    break
                 case .failure(let error):
                     observer(.error(error))
-                    break
                 }
             })
             return Disposables.create()
