@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DFE9BCF21C8D942005D3756 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */; };
 		8A2C03B1203C3388003CA0DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; };
 		8A2C03B2203C3388003CA0DE /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A6275F420DFF53800F48519 /* AVWXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1782032DE1400732E86 /* AVWXKit.framework */; };
@@ -103,6 +104,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		8A6D157A20456ED10068C6F6 /* AVWXKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AVWXKit.xcodeproj; sourceTree = "<group>"; };
 		8AACF1782032DE1400732E86 /* AVWXKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVWXKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 			files = (
 				8AF2FF6F203B064400BD265A /* AVWXKit.framework in Frameworks */,
 				8AF2FF73203B163D00BD265A /* RxSwift.framework in Frameworks */,
+				3DFE9BCF21C8D942005D3756 /* RxAtomic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +253,7 @@
 		8AACF1A82032E15300732E86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */,
 				8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */,
 				8AD91CAC203473D10064AB2B /* RxCocoa.framework */,
 				8AD91CAB203473D00064AB2B /* RxSwift.framework */,

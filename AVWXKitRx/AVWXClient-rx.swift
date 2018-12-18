@@ -8,6 +8,7 @@
 
 import Foundation
 import AVWXKit
+import RxAtomic
 import RxSwift
 import CoreLocation
 
