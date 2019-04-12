@@ -30,18 +30,34 @@ public struct Metar: Decodable {
             case icao = "ICAO"
         }
     }
+
+
+    public struct Value: Decodable {
+        public let repr: String
+        public let spoken: String
+        // nil when r.g. 
+        public let value: Double?
+    }
+
+    public typealias Altimeter = Value
+    public typealias Dewpoint = Value
+    public typealias Visibility = Value
+    public typealias WindDirection = Value
+    public typealias WindSpeed = Value
+    public typealias WindGust = Value
+    
     
     public let rawReport: String
     public let station: String
     public let remarks: String
-    public let altimeter: String
-    public let dewPoint: String
+    public let altimeter: Altimeter
+    public let dewPoint: Dewpoint
     public let flightRules: FlightRules
-    public let visibility: String
-    public let windDirection: String
-    public let windGust: String
-    public let windSpeed: String
-    public let windVariableDirection: [String]
+    public let visibility: Visibility
+    public let windDirection: WindDirection
+    public let windGust: WindGust?
+    public let windSpeed: WindSpeed
+    public let windVariableDirection: [WindDirection]
 
     public var date: Date {
         return metarDate.date
@@ -59,21 +75,21 @@ public struct Metar: Decodable {
     public let translations: Translations?
     
     enum CodingKeys: String, CodingKey {
-        case rawReport      = "Raw-Report"
-        case station        = "Station"
-        case altimeter      = "Altimeter"
-        case dewPoint       = "Dewpoint"
-        case flightRules    = "Flight-Rules"
-        case remarks        = "Remarks"
-        case visibility     = "Visibility"
-        case windDirection  = "Wind-Direction"
-        case windGust       = "Wind-Gust"
-        case windSpeed      = "Wind-Speed"
-        case windVariableDirection = "Wind-Variable-Dir"
-        case speech         = "Speech"
+        case rawReport      = "raw"
+        case station        = "station"
+        case altimeter      = "altimeter"
+        case dewPoint       = "dewpoint"
+        case flightRules    = "flight_rules"
+        case remarks        = "remarks"
+        case visibility     = "visibility"
+        case windDirection  = "wind_direction"
+        case windGust       = "wind_gust"
+        case windSpeed      = "wind_speed"
+        case windVariableDirection = "wind_variable_direction"
+        case speech         = "speech"
         case info           = "Info"
-        case metarDate      = "Time"
-        case translations   = "Translations"
+        case metarDate      = "time"
+        case translations   = "translate"
     }
 }
 

@@ -13,15 +13,18 @@ struct MetarDate: Decodable {
     let date: Date
     
     enum CodingKeys: String, CodingKey {
-        case time      = "Time"
+        // todo
+//        "repr": "121756Z",
+//        "dt": "2019-04-12T17:56:00Z"
+        case time      = "repr"
     }
     public init(from decoder: Decoder) throws {
      
         // The metar time has a format 'ddHHmmZ' (e.g 130756Z)
         // So we need to append the current year and month (yyyy-MM) in order to parse the entire date back
         
-        let container = try decoder.singleValueContainer()
-        let metarString = try container.decode(String.self)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let metarString = try container.decode(String.self, forKey: .time)
         
         let now = Date()
         let formatter = DateFormatter()
