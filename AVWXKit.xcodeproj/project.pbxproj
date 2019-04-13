@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D6ADE4422610EE300236ACB /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */; };
+		3D6ADE4522610EE300236ACB /* RxAtomic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3DFE9BCF21C8D942005D3756 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */; };
 		8A2C03B1203C3388003CA0DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; };
 		8A2C03B2203C3388003CA0DE /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -97,6 +99,7 @@
 				8ACEC54720348C8700892F13 /* AVWXKit.framework in Embed Frameworks */,
 				8AD91CAE203473DC0064AB2B /* RxCocoa.framework in Embed Frameworks */,
 				8AF2FF6B203B062200BD265A /* AVWXKitRx.framework in Embed Frameworks */,
+				3D6ADE4522610EE300236ACB /* RxAtomic.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +107,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D6ADE42226104E300236ACB /* metar-response-valid-old.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "metar-response-valid-old.json"; sourceTree = "<group>"; };
+		3D6ADE43226104E300236ACB /* metar-response-valid-translate-old.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "metar-response-valid-translate-old.json"; sourceTree = "<group>"; };
 		3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		8A6D157A20456ED10068C6F6 /* AVWXKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AVWXKit.xcodeproj; sourceTree = "<group>"; };
@@ -171,6 +176,7 @@
 				8AF2FF6A203B062200BD265A /* AVWXKitRx.framework in Frameworks */,
 				8AD91CAD203473DC0064AB2B /* RxCocoa.framework in Frameworks */,
 				8AD91CAF203473DC0064AB2B /* RxSwift.framework in Frameworks */,
+				3D6ADE4422610EE300236ACB /* RxAtomic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +273,8 @@
 		8AACF1AF2032E22800732E86 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				3D6ADE42226104E300236ACB /* metar-response-valid-old.json */,
+				3D6ADE43226104E300236ACB /* metar-response-valid-translate-old.json */,
 				8AACF1B02032E27A00732E86 /* metar-response-valid.json */,
 				C4D87742DF749B8102E25580 /* metar-response-valid-translate.json */,
 			);
@@ -430,6 +438,7 @@
 					};
 					8AACF1992032E11400732E86 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					8ABB6DF6203426B200A466D8 = {
@@ -786,7 +795,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aeronavmap.AVWXKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -804,7 +813,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aeronavmap.AVWXKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

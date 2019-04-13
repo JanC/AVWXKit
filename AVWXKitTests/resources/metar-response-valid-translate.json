@@ -1,57 +1,121 @@
 {
-    "Altimeter": "2983",
-    "Cloud-List": [
-        [
-            "SCT",
-            "017"
-        ],
-        [
-            "BKN",
-            "024"
-        ],
-        [
-            "OVC",
-            "035"
-        ]
-    ],
-    "Dewpoint": "01",
-    "Flight-Rules": "MVFR",
-    "Meta": {
-        "Cache-Timestamp": "Tue, 27 Feb 2018 09:30:00 GMT",
-        "Timestamp": "Tue, 27 Feb 2018 09:30:23 GMT"
+    "meta": {
+        "timestamp": "2019-04-12T18:08:36.308303Z",
+        "cache-timestamp": "2019-04-12T18:08:36.262999Z"
     },
-    "Other-List": [
-        "-RA"
+    "altimeter": {
+        "repr": "2992",
+        "value": 29.92,
+        "spoken": "two nine point nine two"
+    },
+    "clouds": [
+
     ],
-    "Raw-Report": "KVCV 270915Z AUTO 00000KT 7SM -RA SCT017 BKN024 OVC035 03/01 A2983 RMK AO2",
-    "Remarks": "RMK AO2",
-    "Remarks-Info": {},
-    "Runway-Vis-List": [],
-    "Station": "KVCV",
-    "Temperature": "03",
-    "Time": "270915Z",
-    "Translations": {
-        "Altimeter": "29.83inHg (1010hPa)",
-        "Clouds": "Scattered clouds at 1700ft, Broken layer at 2400ft, Overcast layer at 3500ft - Reported AGL",
-        "Dewpoint": "01C (34F)",
-        "Other": "Light Rain",
-        "Remarks": {
-            "AO2": "Automated with precipitation sensor"
+    "flight_rules": "VFR",
+    "other": [
+
+    ],
+    "sanitized": "KSBP 121756Z 35010KT 10SM CLR 17/07 A2992 RMK AO2 SLP130 T01670067 10167 20094 58005",
+    "visibility": {
+        "repr": "10",
+        "value": 10,
+        "spoken": "one zero"
+    },
+    "wind_direction": {
+        "repr": "350",
+        "value": 350,
+        "spoken": "three five zero"
+    },
+    "wind_gust": null,
+    "wind_speed": {
+        "repr": "10",
+        "value": 10,
+        "spoken": "one zero"
+    },
+    "raw": "KSBP 121756Z 35010KT 10SM CLR 17/07 A2992 RMK AO2 SLP130 T01670067 10167 20094 58005",
+    "station": "KSBP",
+    "time": {
+        "repr": "121756Z",
+        "dt": "2019-04-12T17:56:00Z"
+    },
+    "remarks": "RMK AO2 SLP130 T01670067 10167 20094 58005",
+    "dewpoint": {
+        "repr": "07",
+        "value": 7,
+        "spoken": "seven"
+    },
+    "remarks_info": {
+        "dewpoint_decimal": {
+            "repr": "6.7",
+            "value": 6.7,
+            "spoken": "six point seven"
         },
-        "Temperature": "03C (37F)",
-        "Visibility": "7sm (11.3km)",
-        "Wind": "Calm"
+        "temperature_decimal": {
+            "repr": "16.7",
+            "value": 16.7,
+            "spoken": "one six point seven"
+        }
     },
-    "Units": {
-        "Altimeter": "inHg",
-        "Altitude": "ft",
-        "Temperature": "C",
-        "Visibility": "sm",
-        "Wind-Speed": "kt"
+    "runway_visibility": [
+
+    ],
+    "temperature": {
+        "repr": "17",
+        "value": 17,
+        "spoken": "one seven"
     },
-    "Visibility": "7",
-    "Wind-Direction": "000",
-    "Wind-Gust": "",
-    "Wind-Speed": "00",
-    "Wind-Variable-Dir": []
+    "wind_variable_direction": [
+
+    ],
+    "units": {
+        "altimeter": "inHg",
+        "altitude": "ft",
+        "temperature": "C",
+        "visibility": "sm",
+        "wind_speed": "kt"
+    },
+    "speech": "Winds three five zero at 10kt. Visibility one zero miles. Temperature one seven degrees Celsius. Dew point seven degrees Celsius. Altimeter two nine point nine two. Sky clear",
+    "translate": {
+        "altimeter": "29.83inHg (1010hPa)",
+        "clouds": "Sky clear",
+        "other": "",
+        "visibility": "10sm (16.1km)",
+        "dewpoint": "7°C (45°F)",
+        "remarks": {
+            "10167": "6-hour maximum temperature 16.7°C",
+            "20094": "6-hour minimum temperature 9.4°C",
+            "58005": "3-hour pressure difference: +/- 0.5 mb - Steady or increasing, then decreasing",
+            "AO2": "Automated with precipitation sensor",
+            "SLP130": "Sea level pressure: 1013.0 hPa",
+            "T01670067": "Temperature 16.7°C and dewpoint 6.7°C"
+        },
+        "temperature": "17°C (63°F)",
+        "wind": "N-350 at 10kt"
+    },
+    "info": {
+        "city": "San Luis Obispo",
+        "country": "USA",
+        "elevation": 64.6,
+        "iata": "SBP",
+        "icao": "KSBP",
+        "latitude": 35.23726592,
+        "longitude": -120.6425974,
+        "name": "San Luis Obispo Airport",
+        "priority": 6,
+        "state": "CA",
+        "runways": [
+            {
+                "length": 6100,
+                "width": 150,
+                "ident1": "11",
+                "ident2": "29"
+            },
+            {
+                "length": 2500,
+                "width": 100,
+                "ident1": "07",
+                "ident2": "25"
+            }
+        ]
+    }
 }

@@ -1,38 +1,92 @@
 {
-    "Altimeter": "2995",
-    "Cloud-List": [
-                   [
-                    "BKN",
-                    "095"
-                    ]
-                   ],
-    "Dewpoint": "04",
-    "Flight-Rules": "VFR",
-    "Meta": {
-        "Cache-Timestamp": "Tue, 13 Feb 2018 08:51:45 GMT",
-        "Timestamp": "Tue, 13 Feb 2018 08:51:45 GMT"
+    "meta": {
+        "timestamp": "2019-04-12T17:46:12.627652Z",
+        "cache-timestamp": "2019-04-12T17:46:12.594997Z"
     },
-    "Other-List": [],
-    "Raw-Report": "KSBP 130756Z 00000KT 10SM BKN095 08/04 A2995 RMK AO2 SLP143 T00780039 401610039",
-    "Remarks": "RMK AO2 SLP143 T00780039 401610039",
-    "Remarks-Info": {
-        "Dew-Decimal": "3.9",
-        "Temp-Decimal": "7.8"
+    "altimeter": {
+        "repr": "2993",
+        "value": 29.93,
+        "spoken": "two nine point nine three"
     },
-    "Runway-Vis-List": [],
-    "Station": "KSBP",
-    "Temperature": "08",
-    "Time": "130756Z",
-    "Units": {
-        "Altimeter": "inHg",
-        "Altitude": "ft",
-        "Temperature": "C",
-        "Visibility": "sm",
-        "Wind-Speed": "kt"
+    "clouds": [
+        {
+            "repr": "SCT031",
+            "type": "SCT",
+            "altitude": 31,
+            "modifier": null,
+            "direction": null
+        }
+    ],
+    "flight_rules": "VFR",
+    "other": [
+
+    ],
+    "sanitized": "KSBP 121656Z VRB05KT 10SM SCT031 15/07 A2993 RMK AO2 SLP136 T01500072",
+    "visibility": {
+        "repr": "10",
+        "value": 10,
+        "spoken": "one zero"
     },
-    "Visibility": "10",
-    "Wind-Direction": "000",
-    "Wind-Gust": "",
-    "Wind-Speed": "00",
-    "Wind-Variable-Dir": []
+    "wind_direction": {
+        "repr": "VRB",
+        "value": null,
+        "spoken": "variable"
+    },
+    "wind_gust": null,
+    "wind_speed": {
+        "repr": "05",
+        "value": 5,
+        "spoken": "five"
+    },
+    "raw": "KSBP 121656Z VRB05KT 10SM SCT031 15/07 A2993 RMK AO2 SLP136 T01500072",
+    "station": "KSBP",
+    "time": {
+        "repr": "121656Z",
+        "dt": "2019-04-12T16:56:00Z"
+    },
+    "remarks": "RMK AO2 SLP136 T01500072",
+    "dewpoint": {
+        "repr": "07",
+        "value": 7,
+        "spoken": "seven"
+    },
+    "remarks_info": {
+        "dewpoint_decimal": {
+            "repr": "7.2",
+            "value": 7.2,
+            "spoken": "seven point two"
+        },
+        "temperature_decimal": {
+            "repr": "15.0",
+            "value": 15.0,
+            "spoken": "one five point zero"
+        }
+    },
+    "runway_visibility": [
+
+    ],
+    "temperature": {
+        "repr": "15",
+        "value": 15,
+        "spoken": "one five"
+    },
+    "wind_variable_direction":[
+        {
+            "repr": "020",
+            "value": 20,
+            "spoken": "zero two zero"
+        },
+        {
+            "repr": "120",
+            "value": 120,
+            "spoken": "one two zero"
+        }
+    ],
+    "units": {
+        "altimeter": "inHg",
+        "altitude": "ft",
+        "temperature": "C",
+        "visibility": "sm",
+        "wind_speed": "kt"
+    }
 }

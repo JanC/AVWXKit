@@ -27,25 +27,25 @@ class DeserialisationSpecs: QuickSpec {
                     do {
                         metar = try decoder.decode(Metar.self, from: data)
                     } catch {
-                        print(error)
+                        XCTFail("Failed to parse: \(error)")
                     }
                     
                 }
                 
                 it("parses the raw report") {
-                    expect(metar?.rawReport).to(equal("KSBP 130756Z 00000KT 10SM BKN095 08/04 A2995 RMK AO2 SLP143 T00780039 401610039"))
+                    expect(metar?.rawReport).to(equal("KSBP 121656Z VRB05KT 10SM SCT031 15/07 A2993 RMK AO2 SLP136 T01500072"))
                 }
                 
                 it("parses the altimeter") {
-                    expect(metar?.altimeter).to(equal("2995"))
+                    expect(metar?.altimeter.repr).to(equal("2993"))
                 }
                 
                 it("parses the date") {
-                    expect(metar?.metarDate).notTo(beNil())
+                    expect(metar?.metarDate.date.timeIntervalSince1970).to(equal(1555088160))
                 }
                 
                 it("parses the dew point") {
-                    expect(metar?.dewPoint).to(equal("04"))
+                    expect(metar?.dewPoint.repr).to(equal("07"))
                 }
                 
                 it("parses the flight rules") {
@@ -53,7 +53,7 @@ class DeserialisationSpecs: QuickSpec {
                 }
             }
 
-            fcontext("given a valid metar with translation") {
+            context("given a valid metar with translation") {
                 var metar: Metar?
                 beforeEach {
                     let data = try! Data(contentsOf:Bundle(for: type(of: self)).url(forResource: "metar-response-valid-translate", withExtension: "json")!)
