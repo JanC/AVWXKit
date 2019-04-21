@@ -1,0 +1,99 @@
+{
+    "meta": {
+        "timestamp": "2019-04-21T14:44:58.188580Z"
+    },
+    "altimeter": {
+        "repr": "3008",
+        "value": 30.08,
+        "spoken": "three zero point zero eight"
+    },
+    "clouds": [],
+    "flight_rules": "VFR",
+    "other": [],
+    "sanitized": "KSBP 211356Z 9SM CLR 08/07 A3008 RMK AO2 SLP187 T00830067 $",
+    "visibility": {
+        "repr": "9",
+        "value": 9,
+        "spoken": "nine"
+    },
+    "wind_direction": null,
+    "wind_gust": null,
+    "wind_speed": null,
+    "raw": "KSBP 211356Z 9SM CLR 08/07 A3008 RMK AO2 SLP187 T00830067 $",
+    "station": "KSBP",
+    "time": {
+        "repr": "211356Z",
+        "dt": "2019-04-21T13:56:00Z"
+    },
+    "remarks": "RMK AO2 SLP187 T00830067 $",
+    "dewpoint": {
+        "repr": "07",
+        "value": 7,
+        "spoken": "seven"
+    },
+    "remarks_info": {
+        "dewpoint_decimal": {
+            "repr": "6.7",
+            "value": 6.7,
+            "spoken": "six point seven"
+        },
+        "temperature_decimal": {
+            "repr": "8.3",
+            "value": 8.3,
+            "spoken": "eight point three"
+        }
+    },
+    "runway_visibility": [],
+    "temperature": {
+        "repr": "08",
+        "value": 8,
+        "spoken": "eight"
+    },
+    "wind_variable_direction": [],
+    "units": {
+        "altimeter": "inHg",
+        "altitude": "ft",
+        "temperature": "C",
+        "visibility": "sm",
+        "wind_speed": "kt"
+    },
+    "speech": "Visibility nine miles. Temperature eight degrees Celsius. Dew point seven degrees Celsius. Altimeter three zero point zero eight. Sky clear",
+    "translate": {
+        "altimeter": "30.08 inHg (1019 hPa)",
+        "clouds": "Sky clear",
+        "other": "",
+        "visibility": "9sm (14.5km)",
+        "dewpoint": "7\u00b0C (45\u00b0F)",
+        "remarks": {
+            "AO2": "Automated with precipitation sensor",
+            "SLP187": "Sea level pressure: 1018.7 hPa",
+            "T00830067": "Temperature 8.3\u00b0C and dewpoint 6.7\u00b0C",
+            "$": "ASOS requires maintenance"
+        },
+        "temperature": "8\u00b0C (46\u00b0F)",
+        "wind": ""
+    },
+    "info": {
+        "city": "San Luis Obispo",
+        "country": "USA",
+        "elevation": 64.6,
+        "iata": "SBP",
+        "icao": "KSBP",
+        "latitude": 35.23726592,
+        "longitude": -120.6425974,
+        "name": "San Luis Obispo Airport",
+        "priority": 6,
+        "state": "CA",
+        "runways": [{
+            "length": 6100,
+            "width": 150,
+            "ident1": "11",
+            "ident2": "29"
+        }, {
+            "length": 2500,
+            "width": 100,
+            "ident1": "07",
+            "ident2": "25"
+        }]
+    }
+}

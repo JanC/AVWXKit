@@ -54,9 +54,9 @@ public struct Metar: Decodable {
     public let dewPoint: Dewpoint
     public let flightRules: FlightRules
     public let visibility: Visibility
-    public let windDirection: WindDirection
+    public let windDirection: WindDirection?
     public let windGust: WindGust?
-    public let windSpeed: WindSpeed
+    public let windSpeed: WindSpeed?
     public let windVariableDirection: [WindDirection]
 
     public var date: Date {

@@ -12,6 +12,8 @@ import Nimble
 
 import Foundation
 
+
+
 class DeserialisationSpecs: QuickSpec {
     
     override func spec() {
@@ -23,7 +25,7 @@ class DeserialisationSpecs: QuickSpec {
             context("given a valid metar") {
                 var metar: Metar?
                 beforeEach {
-                    let data = try! Data(contentsOf:Bundle(for: type(of: self)).url(forResource: "metar-response-valid", withExtension: "json")!)
+                    let data = self.jsonData(forResource: "metar-response-valid")
                     do {
                         metar = try decoder.decode(Metar.self, from: data)
                     } catch {
@@ -53,14 +55,30 @@ class DeserialisationSpecs: QuickSpec {
                 }
             }
 
-            context("given a valid metar with translation") {
+            context("given a valid metar without wind") {
                 var metar: Metar?
                 beforeEach {
-                    let data = try! Data(contentsOf:Bundle(for: type(of: self)).url(forResource: "metar-response-valid-translate", withExtension: "json")!)
+                    let data = self.jsonData(forResource: "metar-response-valid-no-wind")
                     do {
                         metar = try decoder.decode(Metar.self, from: data)
                     } catch {
-                        print(error)
+                        XCTFail("Failed to parse: \(error)")
+                    }
+                }
+
+                it("parses the metar") {
+                    expect(metar?.rawReport).notTo(beNil())
+                }
+            }
+
+            context("given a valid metar with translation") {
+                var metar: Metar?
+                beforeEach {
+                    let data = self.jsonData(forResource: "metar-response-valid-translate")
+                    do {
+                        metar = try decoder.decode(Metar.self, from: data)
+                    } catch {
+                        XCTFail("Failed to parse: \(error)")
                     }
 
                 }
@@ -74,5 +92,12 @@ class DeserialisationSpecs: QuickSpec {
                 }
             }
         }
+    }
+}
+
+extension XCTestCase {
+    func jsonData(forResource fileName: String) -> Data {
+        let data = try! Data(contentsOf:Bundle(for: type(of: self)).url(forResource: fileName, withExtension: "json")!)
+        return data
     }
 }

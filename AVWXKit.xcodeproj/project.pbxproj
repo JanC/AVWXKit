@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D6ADE4422610EE300236ACB /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */; };
 		3D6ADE4522610EE300236ACB /* RxAtomic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3DDE6B94226CC01B00346D0D /* metar-response-valid-no-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDE6B93226CC01B00346D0D /* metar-response-valid-no-wind.json */; };
 		3DFE9BCF21C8D942005D3756 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */; };
 		8A2C03B1203C3388003CA0DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; };
 		8A2C03B2203C3388003CA0DE /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -107,11 +108,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3D6ADE42226104E300236ACB /* metar-response-valid-old.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "metar-response-valid-old.json"; sourceTree = "<group>"; };
-		3D6ADE43226104E300236ACB /* metar-response-valid-translate-old.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "metar-response-valid-translate-old.json"; sourceTree = "<group>"; };
+		3DDE6B93226CC01B00346D0D /* metar-response-valid-no-wind.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "metar-response-valid-no-wind.json"; sourceTree = "<group>"; };
 		3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
-		8A6D157A20456ED10068C6F6 /* AVWXKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AVWXKit.xcodeproj; sourceTree = "<group>"; };
 		8AACF1782032DE1400732E86 /* AVWXKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVWXKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AACF17B2032DE1400732E86 /* AVWXKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVWXKit.h; sourceTree = "<group>"; };
 		8AACF17C2032DE1400732E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,15 +192,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8A6D157B20456ED10068C6F6 /* Products */ = {
-			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
 		8AACF16E2032DE1400732E86 = {
 			isa = PBXGroup;
 			children = (
-				8A6D157A20456ED10068C6F6 /* AVWXKit.xcodeproj */,
 				8AACF17A2032DE1400732E86 /* AVWXKit */,
 				8AF2FF64203B062200BD265A /* AVWXKitRx */,
 				8AACF19B2032E11400732E86 /* AVWXKitTests */,
@@ -273,10 +266,9 @@
 		8AACF1AF2032E22800732E86 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				3D6ADE42226104E300236ACB /* metar-response-valid-old.json */,
-				3D6ADE43226104E300236ACB /* metar-response-valid-translate-old.json */,
 				8AACF1B02032E27A00732E86 /* metar-response-valid.json */,
 				C4D87742DF749B8102E25580 /* metar-response-valid-translate.json */,
+				3DDE6B93226CC01B00346D0D /* metar-response-valid-no-wind.json */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -463,12 +455,6 @@
 			mainGroup = 8AACF16E2032DE1400732E86;
 			productRefGroup = 8AACF1792032DE1400732E86 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 8A6D157B20456ED10068C6F6 /* Products */;
-					ProjectRef = 8A6D157A20456ED10068C6F6 /* AVWXKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8AACF1772032DE1400732E86 /* AVWXKit */,
@@ -493,6 +479,7 @@
 			files = (
 				8ABB6DEB2032E75900A466D8 /* metar-response-valid.json in Resources */,
 				C4D879C9892D9B22B9A00F30 /* metar-response-valid-translate.json in Resources */,
+				3DDE6B94226CC01B00346D0D /* metar-response-valid-no-wind.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
