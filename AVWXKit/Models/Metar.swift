@@ -97,7 +97,7 @@ public struct Metar: Decodable {
 // MARK: - Helpers
 public extension Metar {
 
-    public var minutesOld: Int {
+    var minutesOld: Int {
         let now = Date()
         let oldSec = now.timeIntervalSince(date) / 60
         return Int(oldSec)
