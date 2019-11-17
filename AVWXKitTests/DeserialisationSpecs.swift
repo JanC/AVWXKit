@@ -43,7 +43,7 @@ class DeserialisationSpecs: QuickSpec {
                 }
                 
                 it("parses the date") {
-                    expect(metar?.metarDate.date.timeIntervalSince1970).to(equal(1555088160))
+                    expect(metar?.metarDate.date.timeIntervalSince1970).to(equal(1573577760))
                 }
                 
                 it("parses the dew point") {
@@ -89,6 +89,35 @@ class DeserialisationSpecs: QuickSpec {
 
                 it("parses the altimeter") {
                     expect(metar?.translations?.altimeter).to(equal("29.83inHg (1010hPa)"))
+                }
+            }
+
+            context("given a valid metar with info") {
+                var metar: Metar?
+                beforeEach {
+                    let data = self.jsonData(forResource: "metar-response-valid-translate")
+                    do {
+                        metar = try decoder.decode(Metar.self, from: data)
+                    } catch {
+                        XCTFail("Failed to parse: \(error)")
+                    }
+
+                }
+
+                it("parses the info") {
+                    expect(metar?.info).notTo(beNil())
+                }
+
+                it("parses info city") {
+                    expect(metar?.info?.city).notTo(beNil())
+                }
+
+                it("parses info icao") {
+                    expect(metar?.info?.icao).notTo(beNil())
+                }
+
+                it("parses info name") {
+                    expect(metar?.info?.name).notTo(beNil())
                 }
             }
         }

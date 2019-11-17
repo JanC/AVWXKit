@@ -25,9 +25,9 @@ public struct Metar: Decodable {
         public let icao: String
         
         enum CodingKeys: String, CodingKey {
-            case name = "Name"
-            case city = "City"
-            case icao = "ICAO"
+            case name
+            case city
+            case icao
         }
     }
 
@@ -87,7 +87,7 @@ public struct Metar: Decodable {
         case windSpeed      = "wind_speed"
         case windVariableDirection = "wind_variable_direction"
         case speech         = "speech"
-        case info           = "Info"
+        case info           = "info"
         case metarDate      = "time"
         case translations   = "translate"
     }
