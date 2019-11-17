@@ -6,9 +6,8 @@
 //  Copyright © 2018 AeroNav. All rights reserved.
 //
 
-import Foundation
 import CommonCrypto
-
+import Foundation
 
 public struct Metar: Decodable {
     
@@ -31,7 +30,6 @@ public struct Metar: Decodable {
         }
     }
 
-
     public struct Value: Decodable {
         public let repr: String
         public let spoken: String
@@ -45,7 +43,6 @@ public struct Metar: Decodable {
     public typealias WindDirection = Value
     public typealias WindSpeed = Value
     public typealias WindGust = Value
-    
     
     public let rawReport: String
     public let station: String
@@ -63,7 +60,6 @@ public struct Metar: Decodable {
         return metarDate.date
     }
     let metarDate: MetarDate
-    
     
     /// if requested with the "speech" option
     public let speech: String?
@@ -92,7 +88,6 @@ public struct Metar: Decodable {
         case translations   = "translate"
     }
 }
-
 
 // MARK: - Helpers
 public extension Metar {

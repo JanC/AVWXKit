@@ -6,13 +6,11 @@
 //  Copyright © 2018 AeroNav. All rights reserved.
 //
 
-import Quick
-import Nimble
 @testable import AVWXKit
+import Nimble
+import Quick
 
 import Foundation
-
-
 
 class DeserialisationSpecs: QuickSpec {
     
@@ -126,7 +124,9 @@ class DeserialisationSpecs: QuickSpec {
 
 extension XCTestCase {
     func jsonData(forResource fileName: String) -> Data {
-        let data = try! Data(contentsOf:Bundle(for: type(of: self)).url(forResource: fileName, withExtension: "json")!)
+        // swiftlint:disable force_try
+        let data = try! Data(contentsOf: Bundle(for: type(of: self)).url(forResource: fileName, withExtension: "json")!)
+        // swiftlint:enable force_try
         return data
     }
 }

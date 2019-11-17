@@ -6,19 +6,19 @@
 //  Copyright © 2018 AeroNav. All rights reserved.
 //
 
-import Foundation
 import AVWXKit
+import CoreLocation
+import Foundation
 import RxAtomic
 import RxSwift
-import CoreLocation
 
 extension AVWXClient {
     
     public func fetchMetar(forIcao icao: String, options: MetarOptions = []) -> Single<Metar> {
        
-        return Single.create { (observer) -> Disposable in
+        return Single.create { observer -> Disposable in
             
-            self.fetchMetar(forIcao: icao, options: options, completion: { (result) in
+            self.fetchMetar(forIcao: icao, options: options, completion: { result in
                 switch result {
                 case .success(let metar):
                     observer(.success(metar))
@@ -32,9 +32,9 @@ extension AVWXClient {
     
     public func fetchMetar(at coordinates: CLLocationCoordinate2D, options: MetarOptions = []) -> Single<Metar> {
         
-        return Single.create { (observer) -> Disposable in
+        return Single.create { observer -> Disposable in
 
-            self.fetchMetar(at: coordinates, options: options, completion: { (result) in
+            self.fetchMetar(at: coordinates, options: options, completion: { result in
                 switch result {
                 case .success(let metar):
                     observer(.success(metar))

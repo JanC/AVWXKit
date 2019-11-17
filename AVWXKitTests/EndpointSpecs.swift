@@ -6,11 +6,11 @@
 //  Copyright © 2018 AeroNav. All rights reserved.
 //
 
-import Foundation
-import Quick
-import Nimble
-import CoreLocation
 @testable import AVWXKit
+import CoreLocation
+import Foundation
+import Nimble
+import Quick
 
 class EndpointSpecs: QuickSpec {
     

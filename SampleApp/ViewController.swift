@@ -6,8 +6,8 @@
 //  Copyright © 2018 AeroNav. All rights reserved.
 //
 
-import UIKit
 import CoreLocation
+import UIKit
 
 import AVWXKit
 import AVWXKitRx
@@ -47,9 +47,9 @@ class ViewController: UIViewController {
             .rx
             .text
             .map { value in
-                return value != nil  && value!.count > 0
+                return value != nil && value!.count > 0
             }
-            .subscribe(onNext: { (valid) in
+            .subscribe(onNext: { valid in
                 self.metarRequestButton.isEnabled = valid
             }).disposed(by: disposeBag)
         
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
             .subscribe(onSuccess: { [weak self] metar in
 
                 guard let sself = self else { return }
-                sself.viewModel =  MetarViewModel(metar: metar)
+                sself.viewModel = MetarViewModel(metar: metar)
                 sself.tableView.reloadData()
                 SVProgressHUD.dismiss()
                 
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
                 
                 guard let sself = self else { return }
                 sself.metar = metar
-                sself.viewModel =  MetarViewModel(metar: metar)
+                sself.viewModel = MetarViewModel(metar: metar)
                 sself.tableView.reloadData()
                 SVProgressHUD.dismiss()
                 
@@ -138,4 +138,3 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
 }
-

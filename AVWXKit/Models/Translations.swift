@@ -17,13 +17,13 @@ public struct Translations: Codable {
     public let wind: String
 
     private enum CodingKeys: String, CodingKey {
-        case altimeter = "altimeter"
-        case clouds = "clouds"
-        case dewpoint = "dewpoint"
-        case other = "other"
-        case remarks = "remarks"
-        case temperature = "temperature"
-        case visibility = "visibility"
-        case wind = "wind"
+        case altimeter
+        case clouds
+        case dewpoint
+        case other
+        case remarks
+        case temperature
+        case visibility
+        case wind
     }
 }

@@ -6,21 +6,19 @@
 //  Copyright © 2018 AeroNav. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 
 public struct AVWXClient {
     
     let session = URLSession(configuration: URLSessionConfiguration.default)
     let baseURL: URL
     
-    
     public enum ClientError: Error {
         case invalidResponseCode(Int)
         case parsing(Error)
         case network(Error)
     }
-    
 
     public struct MetarOptions: OptionSet {
         public let rawValue: Int
@@ -29,9 +27,9 @@ public struct AVWXClient {
             self.rawValue = rawValue
         }
         
-        public static let speech       = MetarOptions(rawValue: 1 << 0)
-        public static let info         = MetarOptions(rawValue: 1 << 1)
-        public static let translate    = MetarOptions(rawValue: 1 << 2)
+        public static let speech = MetarOptions(rawValue: 1 << 0)
+        public static let info = MetarOptions(rawValue: 1 << 1)
+        public static let translate = MetarOptions(rawValue: 1 << 2)
         
         func string() -> String? {
             var result = [String]()
@@ -76,7 +74,6 @@ public struct AVWXClient {
                 var fullUrl = baseURL.appendingPathComponent("metar/\(formattedLat),\(formattedLong)")
                 fullUrl = Endpoint.addOptions(options: options, to: fullUrl)
                 return fullUrl
-
                 
             case .taf(let icao):
                 return baseURL.appendingPathComponent("taf/\(icao)")
@@ -121,7 +118,7 @@ public struct AVWXClient {
     func fetch<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T>) -> Void ) {
         let url = endpoint.url(baseURL: baseURL)
         debugPrint("METAR GET \(url.absoluteString)")
-        let task = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return

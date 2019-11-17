@@ -6,11 +6,11 @@
 //  Copyright © 2018 AeroNav. All rights reserved.
 //
 
+@testable import AVWXKit
 import Foundation
-import Quick
 import Nimble
 import OHHTTPStubs
-@testable import AVWXKit
+import Quick
 
 class AVWXClientSpecs: QuickSpec {
     
@@ -35,14 +35,13 @@ class AVWXClientSpecs: QuickSpec {
                 beforeEach {
                     stub(condition: isHost(sut.baseURL.host!)) { _ in
                         let stubPath = OHPathForFile("metar-response-valid.json", type(of: self))
-                        return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
+                        return fixture(filePath: stubPath!, headers: ["Content-Type": "application/json"])
                     }
                     
                     sut.fetchMetar(forIcao: "KSBP") { result in
                         switch result {
-                            case .success(let resultMetar):
+                        case .success(let resultMetar):
                             metar = resultMetar
-                            break;
                         case .failure(let resultError):
                             error = resultError
                         }
@@ -66,7 +65,6 @@ class AVWXClientSpecs: QuickSpec {
                         switch result {
                         case .success(let resultMetar):
                             metar = resultMetar
-                            break;
                         case .failure(let resultError):
                             error = resultError
                         }
@@ -89,7 +87,6 @@ class AVWXClientSpecs: QuickSpec {
                         switch result {
                         case .success(let resultMetar):
                             metar = resultMetar
-                            break;
                         case .failure(let resultError):
                             error = resultError
                         }

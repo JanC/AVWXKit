@@ -3,11 +3,11 @@
 //  See the file LICENSE.txt for copying permission.
 //
 
-import UIKit
+import AVFoundation
+import CoreLocation
 import RxCocoa
 import RxSwift
-import CoreLocation
-import AVFoundation
+import UIKit
 
 extension ViewController {
 
@@ -17,9 +17,9 @@ extension ViewController {
                 .disposed(by: disposeBag)
     }
 
-    func alert(title: String, text: String? = nil) -> Completable  {
+    func alert(title: String, text: String? = nil) -> Completable {
 
-        return Completable.create { (observer) -> Disposable in
+        return Completable.create { observer -> Disposable in
 
             let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
 
@@ -45,7 +45,6 @@ extension ViewController {
     }
 }
 
-
 extension CLLocationCoordinate2D {
 
     /// 35.237,-120.644
@@ -61,4 +60,3 @@ extension CLLocationCoordinate2D {
     }
 
 }
-

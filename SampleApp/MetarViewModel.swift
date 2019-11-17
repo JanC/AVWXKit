@@ -7,7 +7,6 @@ import Foundation
 
 import AVWXKit
 
-
 struct EntryViewModel {
 
     let title: String
@@ -35,7 +34,6 @@ struct MetarViewModel {
         self.metar = metar
         self.rowValues = MetarViewModel.generateRows(metar: metar)
     }
-
 
     static func generateRows(metar: Metar) -> [EntryViewModel] {
         var values = [EntryViewModel]()
