@@ -6,11 +6,10 @@
 //  Copyright © 2018 AeroNav. All rights reserved.
 //
 
-import CoreLocation
-import UIKit
 import AVWXKit
-
+import CoreLocation
 import SVProgressHUD
+import UIKit
 
 class ViewController: UIViewController {
     
@@ -22,8 +21,9 @@ class ViewController: UIViewController {
     
     var usernameTextField: UITextField!
     var passwordTextField: UITextField!
-    
-    let client = AVWXClient(baseURL: URL(string: "https://avwx.aeronavmap.com/")!)
+
+    // Token from https://account.avwx.rest/
+    let client = AVWXClient(token: "token")
 
     var metar: Metar?
     var viewModel: MetarViewModel?
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         client.fetchMetar(forIcao: icao, options: [.speech, .info], completion: handleResult(_:))
     }
 
-    private func handleResult(_ result: AVWXClient.Result<Metar>) {
+    private func handleResult(_ result: Result<Metar, Error>) {
         DispatchQueue.main.async {
             SVProgressHUD.dismiss()
             switch result {

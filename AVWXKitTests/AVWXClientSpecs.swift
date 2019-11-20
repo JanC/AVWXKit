@@ -17,7 +17,7 @@ class AVWXClientSpecs: QuickSpec {
     override func spec() {
         describe("getting metar") {
             
-            let sut = AVWXClient()
+            let sut = AVWXClient(token: "")
             
             var metar: Metar?
             var error: Error?

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D6ADE4422610EE300236ACB /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */; };
 		3D6ADE4522610EE300236ACB /* RxAtomic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3D6B447E2385170D00248210 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B447D2385170D00248210 /* Endpoint.swift */; };
+		3D6B44802385172F00248210 /* MetarOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B447F2385172F00248210 /* MetarOptions.swift */; };
 		3DDE6B94226CC01B00346D0D /* metar-response-valid-no-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDE6B93226CC01B00346D0D /* metar-response-valid-no-wind.json */; };
 		8A2C03B1203C3388003CA0DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; };
 		8A2C03B2203C3388003CA0DE /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -93,6 +95,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D6B447D2385170D00248210 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		3D6B447F2385172F00248210 /* MetarOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetarOptions.swift; sourceTree = "<group>"; };
 		3D97EF0C23854BE800F0F5E5 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		3DDE6B93226CC01B00346D0D /* metar-response-valid-no-wind.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "metar-response-valid-no-wind.json"; sourceTree = "<group>"; };
 		3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				8ABB6DED20333EF800A466D8 /* AVWXClient.swift */,
+				3D6B447F2385172F00248210 /* MetarOptions.swift */,
+				3D6B447D2385170D00248210 /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 					};
 					8ABB6DF6203426B200A466D8 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -450,8 +457,10 @@
 			files = (
 				8ABB6DEE20333EF800A466D8 /* AVWXClient.swift in Sources */,
 				8AFC8EA6203DF0AD00372685 /* MetarDate.swift in Sources */,
+				3D6B44802385172F00248210 /* MetarOptions.swift in Sources */,
 				8AACF1852032DF7C00732E86 /* Metar.swift in Sources */,
 				C4D87C5C654A1A8DA2216356 /* Translations.swift in Sources */,
+				3D6B447E2385170D00248210 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,7 +736,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aeronavmap.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -747,7 +756,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aeronavmap.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
