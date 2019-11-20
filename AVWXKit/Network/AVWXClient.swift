@@ -50,12 +50,7 @@ public struct AVWXClient {
             return result.joined(separator: ",")
         }
     }
-    
-    public enum Result<T> {
-        case success(T)
-        case failure(Error)
-    }
-    
+
     enum Endpoint {
         
         case metar(String, MetarOptions)
@@ -100,17 +95,17 @@ public struct AVWXClient {
         self.token = token
     }
     
-    public func fetchMetar(forIcao icao: String, options: MetarOptions = [], completion: @escaping (Result<Metar>) -> Void ) {
+    public func fetchMetar(forIcao icao: String, options: MetarOptions = [], completion: @escaping (Result<Metar, Error>) -> Void ) {
         let endpoint = Endpoint.metar(icao, options)
         fetch(endpoint: endpoint, completion: completion)
     }
     
-    public func fetchMetar(at coordinates: CLLocationCoordinate2D, options: MetarOptions = [], completion: @escaping (Result<Metar>) -> Void ) {
+    public func fetchMetar(at coordinates: CLLocationCoordinate2D, options: MetarOptions = [], completion: @escaping (Result<Metar, Error>) -> Void ) {
         let endpoint = Endpoint.metarCoordintes(coordinates, options)
         fetch(endpoint: endpoint, completion: completion)
     }
     
-    func fetch<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T>) -> Void ) {
+    func fetch<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> Void ) {
         let url = endpoint.url(baseURL: baseURL)
         debugPrint("GET \(url.absoluteString)")
         
