@@ -4,6 +4,5 @@ github "Quick/Nimble"
 github "AliSoftware/OHHTTPStubs"
 
 # Sample App
-github "ReactiveX/RxSwift" ~> 4.0
 github "SVProgressHUD/SVProgressHUD"
 
