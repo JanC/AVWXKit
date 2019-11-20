@@ -22,8 +22,9 @@ class ViewController: UIViewController {
     
     var usernameTextField: UITextField!
     var passwordTextField: UITextField!
-    
-    let client = AVWXClient(token: "ssWqmS1ELdfTMfKCpVAYLBxSdKjIl3MShm5LqgJZLEU")
+
+    // Token from https://account.avwx.rest/
+    let client = AVWXClient(token: "token")
 
     var metar: Metar?
     var viewModel: MetarViewModel?
