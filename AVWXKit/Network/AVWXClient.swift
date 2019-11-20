@@ -19,16 +19,17 @@ public struct AVWXClient {
         case invalidResponseCode(Int)
         case parsing(Error)
         case network(Error)
+        case noData
     }
 
-    public init(baseURL: URL = URL(string: "https://avwx.rest/api/")!, token: String) {
+    public init(baseURL: URL = URL(string: "https://avwx.rest/api/")!, token: String = "") {
         self.baseURL = baseURL
         self.token = token
     }
     
     public func fetchMetar(forIcao icao: String, options: MetarOptions = [], completion: @escaping (Result<Metar, Error>) -> Void ) {
         let endpoint = Endpoint.metar(icao, options)
-        fetch(endpoint: endpoint, completion: completion)
+            fetch(endpoint: endpoint, completion: completion)
     }
     
     public func fetchMetar(at coordinates: CLLocationCoordinate2D, options: MetarOptions = [], completion: @escaping (Result<Metar, Error>) -> Void ) {
@@ -53,16 +54,18 @@ public struct AVWXClient {
                 completion(.failure(ClientError.invalidResponseCode(httpResponse.statusCode)))
                 return
             }
-            
-            if let data = data {
-                let decoder = JSONDecoder()
-                do {
-                    let result = try decoder.decode(T.self, from: data)
-                    completion(Result.success(result))
-                } catch {
-                    print(error)
-                    completion(.failure(error))
-                }
+
+            guard let data = data else {
+                completion(.failure(ClientError.noData))
+                return
+            }
+            let decoder = JSONDecoder()
+            do {
+                let result = try decoder.decode(T.self, from: data)
+                completion(Result.success(result))
+            } catch {
+                print(error)
+                completion(.failure(error))
             }
         }
         task.resume()

@@ -21,7 +21,7 @@ class EndpointSpecs: QuickSpec {
             context("with icao") {
                 var url: URL!
                 beforeEach {
-                    url = AVWXClient.Endpoint.metar("KSBP", []).url(baseURL: self.baseURL)
+                    url = Endpoint.metar("KSBP", []).url(baseURL: self.baseURL)
                 }
 
                 it("returns a url with icao") {
@@ -33,7 +33,7 @@ class EndpointSpecs: QuickSpec {
                 var url: URL!
                 beforeEach {
                     let coordinates = CLLocationCoordinate2D(latitude: 35.2371234, longitude: -120.6441234)
-                    url = AVWXClient.Endpoint.metarCoordintes(coordinates, []).url(baseURL: self.baseURL)
+                    url = Endpoint.metarCoordintes(coordinates, []).url(baseURL: self.baseURL)
                 }
                 
                 it("returns a url with icao") {
@@ -46,7 +46,7 @@ class EndpointSpecs: QuickSpec {
                 context("info option") {
                     var url: URL!
                     beforeEach {
-                        url = AVWXClient.Endpoint.metar("KSBP", [.info]).url(baseURL: self.baseURL)
+                        url = Endpoint.metar("KSBP", [.info]).url(baseURL: self.baseURL)
                     }
                     
                     it("returns a url with icao") {
@@ -57,7 +57,7 @@ class EndpointSpecs: QuickSpec {
                 context("translate option") {
                     var url: URL!
                     beforeEach {
-                        url = AVWXClient.Endpoint.metar("KSBP", [.translate]).url(baseURL: self.baseURL)
+                        url = Endpoint.metar("KSBP", [.translate]).url(baseURL: self.baseURL)
                     }
                     
                     it("returns a url with icao") {
@@ -68,7 +68,7 @@ class EndpointSpecs: QuickSpec {
                 context("translate and info option") {
                     var url: URL!
                     beforeEach {
-                        url = AVWXClient.Endpoint.metar("KSBP", [.info, .translate]).url(baseURL: self.baseURL)
+                        url = Endpoint.metar("KSBP", [.info, .translate]).url(baseURL: self.baseURL)
                     }
                     
                     it("returns a url with icao") {
