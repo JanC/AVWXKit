@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     var usernameTextField: UITextField!
     var passwordTextField: UITextField!
     
-    let client = AVWXClient(baseURL: URL(string: "https://avwx.aeronavmap.com/")!)
+    let client = AVWXClient(token: "ssWqmS1ELdfTMfKCpVAYLBxSdKjIl3MShm5LqgJZLEU")
 
     var metar: Metar?
     var viewModel: MetarViewModel?

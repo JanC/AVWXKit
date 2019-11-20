@@ -13,6 +13,7 @@ public struct AVWXClient {
     
     let session = URLSession(configuration: URLSessionConfiguration.default)
     let baseURL: URL
+    let token: String
     
     public enum ClientError: Error {
         case invalidResponseCode(Int)
@@ -94,31 +95,29 @@ public struct AVWXClient {
         }
     }
     
-    public init(baseURL: URL = URL(string: "https://avwx.rest/api/")!) {
+    public init(baseURL: URL = URL(string: "https://avwx.rest/api/")!, token: String) {
         self.baseURL = baseURL
+        self.token = token
     }
     
     public func fetchMetar(forIcao icao: String, options: MetarOptions = [], completion: @escaping (Result<Metar>) -> Void ) {
         let endpoint = Endpoint.metar(icao, options)
-        
-        fetch(endpoint: endpoint) { (result: Result<Metar>) in
-            print("METAR done: \(result)")
-            completion(result)
-        }
+        fetch(endpoint: endpoint, completion: completion)
     }
     
     public func fetchMetar(at coordinates: CLLocationCoordinate2D, options: MetarOptions = [], completion: @escaping (Result<Metar>) -> Void ) {
         let endpoint = Endpoint.metarCoordintes(coordinates, options)
-        fetch(endpoint: endpoint) { (result: Result<Metar>) in
-            print("METAR done: \(result)")
-            completion(result)
-        }
+        fetch(endpoint: endpoint, completion: completion)
     }
     
     func fetch<T: Decodable>(endpoint: Endpoint, completion: @escaping (Result<T>) -> Void ) {
         let url = endpoint.url(baseURL: baseURL)
-        debugPrint("METAR GET \(url.absoluteString)")
-        let task = session.dataTask(with: url) { data, response, error in
+        debugPrint("GET \(url.absoluteString)")
+        
+        var request = URLRequest(url: url)
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+
+        let task = session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
