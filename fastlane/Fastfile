@@ -24,7 +24,7 @@ platform :ios do
   desc 'You can optionnaly specify the xcode version'
   desc "e.g 'fastlane kit_carthage_build xc_version:9.3'"
   lane :kit_carthage_build do |options|
-      carthage(platform: "iOS", verbose: true, use_binaries: false, cache_builds: false)
+      carthage(platform: "iOS", verbose: false, use_binaries: false, cache_builds: true)
   end
 
 
