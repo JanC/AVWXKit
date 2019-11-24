@@ -28,7 +28,7 @@ platform :ios do
                 verbose: false, 
                 use_binaries: false, 
                 cache_builds: true,
-                configuration: Debug)
+                configuration: "Debug")
   end
 
 
