@@ -1,0 +1,20 @@
+name: CI
+# This workflow is triggered on pushes to the repository.
+on:
+  push:
+    branches:
+    - develop
+    - feature/*
+jobs:
+  test:
+    # Job name is test
+    name: Test
+    # This job runs on macOS
+    runs-on: macOS-latest
+
+steps:
+  - name: Install dependencies
+    run: bundle exec fastlane kit_carthage_build
+
+  - name: Build and test
+    run: bundle exec fastlane kit_test
