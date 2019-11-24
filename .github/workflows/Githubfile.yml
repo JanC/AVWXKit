@@ -9,6 +9,6 @@ jobs:
   test:
     name: Test
     runs-on: macOS-latest
-  steps:
-    - name: Install dependencies
-      run: bundle exec fastlane kit_carthage_build
+    steps:
+      - name: Install dependencies
+        run: bundle exec fastlane kit_carthage_build
