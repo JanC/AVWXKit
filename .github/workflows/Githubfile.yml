@@ -10,7 +10,10 @@ jobs:
     runs-on: macOS-latest
     steps:
       - name: Install dependencies
-        run: bundle install
+        run: | 
+          pwd
+          ls -al
+          bundle install
 
       - name: Install Carthage
         run: bundle exec fastlane kit_carthage_build
