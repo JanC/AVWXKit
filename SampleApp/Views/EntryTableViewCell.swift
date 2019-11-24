@@ -6,8 +6,8 @@
 import UIKit
 
 class EntryTableViewCell: UITableViewCell {
-    @IBOutlet var entryTitleLabel: UILabel!
-    @IBOutlet var entryValueLabel: UILabel!
+    @IBOutlet private var entryTitleLabel: UILabel!
+    @IBOutlet private var entryValueLabel: UILabel!
 
     func configure(with viewModel: EntryViewModel) {
         entryValueLabel.text = viewModel.value

@@ -17,12 +17,12 @@ enum Endpoint {
 
     func url(baseURL: URL) -> URL {
         switch self {
-        case .metar(let icao, let options):
+        case let .metar(icao, options):
             var fullUrl = baseURL.appendingPathComponent("metar/\(icao)")
             fullUrl = Endpoint.addOptions(options: options, to: fullUrl)
             return fullUrl
 
-        case .metarCoordintes(let coordinates, let options):
+        case let .metarCoordintes(coordinates, options):
             let formattedLat = String(format: "%0.3f", coordinates.latitude)
             let formattedLong = String(format: "%0.3f", coordinates.longitude)
             var fullUrl = baseURL.appendingPathComponent("metar/\(formattedLat),\(formattedLong)")
