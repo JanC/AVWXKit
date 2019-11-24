@@ -47,7 +47,7 @@ class ViewController: UIViewController {
 
         SVProgressHUD.show()
         guard let icao = icaoTextField.text else { return }
-        client.fetchMetar(forIcao: icao, options: [.speech, .info], completion: handleResult(_:))
+        client.fetchMetar(at: icao, options: [.speech, .info], completion: handleResult(_:))
     }
 
     private func handleResult(_ result: Result<Metar, Error>) {

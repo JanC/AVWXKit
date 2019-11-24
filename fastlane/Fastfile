@@ -24,7 +24,12 @@ platform :ios do
   desc 'You can optionnaly specify the xcode version'
   desc "e.g 'fastlane kit_carthage_build xc_version:9.3'"
   lane :kit_carthage_build do |options|
-      carthage(platform: "iOS", verbose: false, use_binaries: false, cache_builds: true)
+      carthage(platform: "iOS", 
+                verbose: false, 
+                use_binaries: false, 
+                cache_builds: true,
+                configuration: "Debug")
+                #https://github.com/Quick/Nimble/issues/702
   end
 
 

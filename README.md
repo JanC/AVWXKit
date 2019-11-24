@@ -42,11 +42,11 @@ github "JanC/AVWXKit"
 ```swift
 import AVWXKit
 
-let client = AVWXClient()
+// Token from https://account.avwx.rest/
+let client = AVWXClient(token: "xxxxx")
 
 // By ICAO
-
-client.fetchMetar(forIcao: "KSBP", options: [.speech, .info]) { result in
+client.fetchMetar(at: "KSBP", options: [.speech, .info]) { result in
     switch result {
     case .success(let metar):
         print("Metar: \(metar.rawReport)")
@@ -69,29 +69,6 @@ client.fetchMetar(at: coordinates, options: [.info, .speech]) { (result) in
 
 ```
 
-## RxSwift example
-
-`AVWXKit` is also wrapped in a `AVWXKitRx` which exposes the API in [RxSwift](https://github.com/ReactiveX/RxSwift). The example above becomes
-
-```swift
-import AVWXKit
-import AVWXKitRx
-
-
-client.fetchMetar(forIcao: "KSBP", options: [.speech, .info])
-    .observeOn(MainScheduler.instance)
-    .subscribe(onSuccess: { [weak self] metar in
-        guard let sself = self else { return }
-		 print("Metar: \(metar)")
-        
-    }, onError: { [weak self] error in
-        guard let sself = self else { return }
-        MBProgressHUD.hide(for: sself.view, animated: true)
-        sself.showMessage("Error", description: error.localizedDescription)
-        
-    }).disposed(by: disposeBag)
-```
-
 
 
 ## Contribute
@@ -105,7 +82,7 @@ Jan Chaloupecky – [@TexTwil](https://twitter.com/TexTwil)
 Distributed under the XYZ license. See ``LICENSE`` for more information.
 
 
-[swift-image]:https://img.shields.io/badge/swift-4.0-orange.svg
+[swift-image]:https://img.shields.io/badge/swift-5.0-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
