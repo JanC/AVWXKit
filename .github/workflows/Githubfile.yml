@@ -13,6 +13,11 @@ jobs:
         xcode: [11.2]
     steps:
       - uses: actions/checkout@v1
+
+      - uses: actions/cache@v1
+        with:
+          path: Carthage
+          key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
       
       - name: Install dependencies
         run: bundle install
