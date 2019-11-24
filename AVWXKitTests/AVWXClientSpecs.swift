@@ -38,7 +38,7 @@ class AVWXClientSpecs: QuickSpec {
                         return fixture(filePath: stubPath!, headers: ["Content-Type": "application/json"])
                     }
                     
-                    sut.fetchMetar(forIcao: "KSBP") { result in
+                    sut.fetchMetar(at: "KSBP") { result in
                         switch result {
                         case .success(let resultMetar):
                             metar = resultMetar
@@ -61,7 +61,7 @@ class AVWXClientSpecs: QuickSpec {
                         return OHHTTPStubsResponse(jsonObject: [ "foo": "bar"], statusCode: 200, headers: nil)
                     }
                     
-                    sut.fetchMetar(forIcao: "KSBP") { result in
+                    sut.fetchMetar(at: "KSBP") { result in
                         switch result {
                         case .success(let resultMetar):
                             metar = resultMetar
@@ -83,7 +83,7 @@ class AVWXClientSpecs: QuickSpec {
                     stub(condition: isHost(sut.baseURL.host!)) { _ in
                         return OHHTTPStubsResponse(jsonObject: [ "foo": "bar"], statusCode: 404, headers: nil)
                     }
-                    sut.fetchMetar(forIcao: "KSBP") { result in
+                    sut.fetchMetar(at: "KSBP") { result in
                         switch result {
                         case .success(let resultMetar):
                             metar = resultMetar

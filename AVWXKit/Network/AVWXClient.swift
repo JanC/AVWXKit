@@ -27,7 +27,7 @@ public struct AVWXClient {
         self.token = token
     }
     
-    public func fetchMetar(forIcao icao: String, options: MetarOptions = [], completion: @escaping (Result<Metar, Error>) -> Void ) {
+    public func fetchMetar(at icao: String, options: MetarOptions = [], completion: @escaping (Result<Metar, Error>) -> Void ) {
         let endpoint = Endpoint.metar(icao, options)
             fetch(endpoint: endpoint, completion: completion)
     }
