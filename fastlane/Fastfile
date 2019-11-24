@@ -29,6 +29,7 @@ platform :ios do
                 use_binaries: false, 
                 cache_builds: true,
                 configuration: "Debug")
+                #https://github.com/Quick/Nimble/issues/702
   end
 
 
