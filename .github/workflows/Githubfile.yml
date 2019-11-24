@@ -8,6 +8,9 @@ on:
 jobs:
   test:
     runs-on: macOS-latest
+    strategy:
+      matrix:
+        xcode: ['/Applications/Xcode_11.2.app/Contents/Developer']
     steps:
       - uses: actions/checkout@v1
       - name: Install dependencies
@@ -18,3 +21,5 @@ jobs:
 
       - name: Install Carthage
         run: bundle exec fastlane kit_carthage_build
+        env:
+          DEVELOPER_DIR: ${{ matrix.xcode }}
