@@ -12,12 +12,12 @@ import SVProgressHUD
 import UIKit
 
 class ViewController: UIViewController {
-    
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var icaoTextField: UITextField!
-    @IBOutlet var coordinatesTextField: UITextField!
-    @IBOutlet var metarRequestButton: UIButton!
-    @IBOutlet var coordinatesRequestButton: UIButton!
+
+    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var icaoTextField: UITextField!
+    @IBOutlet private var coordinatesTextField: UITextField!
+    @IBOutlet private var metarRequestButton: UIButton!
+    @IBOutlet private var coordinatesRequestButton: UIButton!
     
     var usernameTextField: UITextField!
     var passwordTextField: UITextField!
@@ -27,11 +27,7 @@ class ViewController: UIViewController {
 
     var metar: Metar?
     var viewModel: MetarViewModel?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+
     // MARK: - Actions
 
     @IBAction func requestByCoordinatesAction(sender: Any) {
@@ -40,7 +36,6 @@ class ViewController: UIViewController {
         
         guard let coordinates = CLLocationCoordinate2D(coordinatesString: coordinatesTextField.text!) else { return }
         client.fetchMetar(at: coordinates, options: [.speech, .info], completion: handleResult(_:))
-
     }
     
     @IBAction func fetchAction(sender: Any) {
@@ -49,6 +44,8 @@ class ViewController: UIViewController {
         guard let icao = icaoTextField.text else { return }
         client.fetchMetar(at: icao, options: [.speech, .info], completion: handleResult(_:))
     }
+
+    // MARK: - Private
 
     private func handleResult(_ result: Result<Metar, Error>) {
         DispatchQueue.main.async {
