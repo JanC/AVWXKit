@@ -8,7 +8,6 @@
 
 import AVWXKit
 import CoreLocation
-import SVProgressHUD
 import UIKit
 
 class ViewController: UIViewController {
@@ -31,8 +30,7 @@ class ViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func requestByCoordinatesAction(sender: Any) {
-        
-        SVProgressHUD.show()
+    
         
         guard let coordinates = CLLocationCoordinate2D(coordinatesString: coordinatesTextField.text!) else { return }
         client.fetchMetar(at: coordinates, options: [.speech, .info], completion: handleResult(_:))
@@ -40,7 +38,6 @@ class ViewController: UIViewController {
     
     @IBAction func fetchAction(sender: Any) {
 
-        SVProgressHUD.show()
         guard let icao = icaoTextField.text else { return }
         client.fetchMetar(at: icao, options: [.speech, .info], completion: handleResult(_:))
     }
@@ -49,7 +46,6 @@ class ViewController: UIViewController {
 
     private func handleResult(_ result: Result<Metar, Error>) {
         DispatchQueue.main.async {
-            SVProgressHUD.dismiss()
             switch result {
             case .success(let metar):
                 self.viewModel = MetarViewModel(metar: metar)

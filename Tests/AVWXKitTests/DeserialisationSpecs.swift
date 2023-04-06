@@ -9,7 +9,7 @@
 @testable import AVWXKit
 import Nimble
 import Quick
-
+import XCTest
 import Foundation
 
 class DeserialisationSpecs: QuickSpec {
@@ -126,7 +126,7 @@ class DeserialisationSpecs: QuickSpec {
 extension XCTestCase {
     func jsonData(forResource fileName: String) -> Data {
         // swiftlint:disable force_try
-        let data = try! Data(contentsOf: Bundle(for: type(of: self)).url(forResource: fileName, withExtension: "json")!)
+        let data = try! Data(contentsOf: Bundle.module.url(forResource: fileName, withExtension: "json")!)
         // swiftlint:enable force_try
         return data
     }
