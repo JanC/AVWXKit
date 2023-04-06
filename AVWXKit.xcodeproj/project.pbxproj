@@ -3,119 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D6ADE4422610EE300236ACB /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */; };
-		3D6ADE4522610EE300236ACB /* RxAtomic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3D6B447E2385170D00248210 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B447D2385170D00248210 /* Endpoint.swift */; };
-		3D6B44802385172F00248210 /* MetarOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B447F2385172F00248210 /* MetarOptions.swift */; };
-		3DDE6B94226CC01B00346D0D /* metar-response-valid-no-wind.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DDE6B93226CC01B00346D0D /* metar-response-valid-no-wind.json */; };
-		8A2C03B1203C3388003CA0DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; };
-		8A2C03B2203C3388003CA0DE /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8A6275F420DFF53800F48519 /* AVWXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1782032DE1400732E86 /* AVWXKit.framework */; };
-		8AACF17D2032DE1400732E86 /* AVWXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AACF17B2032DE1400732E86 /* AVWXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8AACF1852032DF7C00732E86 /* Metar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AACF1842032DF7C00732E86 /* Metar.swift */; };
-		8AACF19F2032E11400732E86 /* AVWXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1782032DE1400732E86 /* AVWXKit.framework */; };
-		8AACF1A62032E12700732E86 /* DeserialisationSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AACF1A52032E12700732E86 /* DeserialisationSpecs.swift */; };
-		8AACF1AC2032E17800732E86 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1AB2032E16600732E86 /* Nimble.framework */; };
-		8AACF1AD2032E17800732E86 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1A92032E16600732E86 /* OHHTTPStubs.framework */; };
-		8AACF1AE2032E17800732E86 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1AA2032E16600732E86 /* Quick.framework */; };
-		8ABB6DE82032E74600A466D8 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AACF1AB2032E16600732E86 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8ABB6DE92032E74600A466D8 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AACF1A92032E16600732E86 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8ABB6DEA2032E74600A466D8 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8AACF1AA2032E16600732E86 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8ABB6DEB2032E75900A466D8 /* metar-response-valid.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AACF1B02032E27A00732E86 /* metar-response-valid.json */; };
-		8ABB6DEE20333EF800A466D8 /* AVWXClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB6DED20333EF800A466D8 /* AVWXClient.swift */; };
-		8ABB6DF0203345BA00A466D8 /* AVWXClientSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB6DEF203345BA00A466D8 /* AVWXClientSpecs.swift */; };
-		8ABB6DF2203362E500A466D8 /* EndpointSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB6DF1203362E500A466D8 /* EndpointSpecs.swift */; };
+		8A56A86129DECDF9006F8ECB /* AVWXKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A56A86029DECDF9006F8ECB /* AVWXKit */; };
 		8ABB6DFA203426B200A466D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB6DF9203426B200A466D8 /* AppDelegate.swift */; };
 		8ABB6DFC203426B200A466D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB6DFB203426B200A466D8 /* ViewController.swift */; };
 		8ABB6DFF203426B200A466D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB6DFD203426B200A466D8 /* Main.storyboard */; };
 		8ABB6E01203426B200A466D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB6E00203426B200A466D8 /* Assets.xcassets */; };
 		8ABB6E04203426B200A466D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB6E02203426B200A466D8 /* LaunchScreen.storyboard */; };
-		8ACEC54720348C8700892F13 /* AVWXKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AACF1782032DE1400732E86 /* AVWXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8AD91CAD203473DC0064AB2B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD91CAC203473D10064AB2B /* RxCocoa.framework */; };
-		8AD91CAE203473DC0064AB2B /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD91CAC203473D10064AB2B /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8AD91CAF203473DC0064AB2B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD91CAB203473D00064AB2B /* RxSwift.framework */; };
-		8AD91CB0203473DC0064AB2B /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD91CAB203473D00064AB2B /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8AFC8EA6203DF0AD00372685 /* MetarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC8EA5203DF0AD00372685 /* MetarDate.swift */; };
 		C4D878B52941D4C35B84FF06 /* MetarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8783A29BC449406E3BAD2 /* MetarViewModel.swift */; };
-		C4D879C9892D9B22B9A00F30 /* metar-response-valid-translate.json in Resources */ = {isa = PBXBuildFile; fileRef = C4D87742DF749B8102E25580 /* metar-response-valid-translate.json */; };
-		C4D87C5C654A1A8DA2216356 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8762D7934037D1744E53F /* Translations.swift */; };
 		C4D87C5CFE7649D4A8C7234D /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D8736778BC12705F67535C /* EntryTableViewCell.swift */; };
 		C4D87D69C2C5739327015CA9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D879EEF0A28E5661A93849 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		8AACF1A02032E11400732E86 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8AACF16F2032DE1400732E86 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8AACF1772032DE1400732E86;
-			remoteInfo = AVWXKit;
-		};
-		8ACEC54820348C8700892F13 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8AACF16F2032DE1400732E86 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8AACF1772032DE1400732E86;
-			remoteInfo = AVWXKit;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		8ABB6DE72032E73100A466D8 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8ABB6DE82032E74600A466D8 /* Nimble.framework in CopyFiles */,
-				8ABB6DE92032E74600A466D8 /* OHHTTPStubs.framework in CopyFiles */,
-				8ABB6DEA2032E74600A466D8 /* Quick.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8AD91CB1203473DC0064AB2B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8A2C03B2203C3388003CA0DE /* SVProgressHUD.framework in Embed Frameworks */,
-				8AD91CB0203473DC0064AB2B /* RxSwift.framework in Embed Frameworks */,
-				8ACEC54720348C8700892F13 /* AVWXKit.framework in Embed Frameworks */,
-				8AD91CAE203473DC0064AB2B /* RxCocoa.framework in Embed Frameworks */,
-				3D6ADE4522610EE300236ACB /* RxAtomic.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		3D6B447D2385170D00248210 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		3D6B447F2385172F00248210 /* MetarOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetarOptions.swift; sourceTree = "<group>"; };
-		3D97EF0C23854BE800F0F5E5 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
-		3DDE6B93226CC01B00346D0D /* metar-response-valid-no-wind.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "metar-response-valid-no-wind.json"; sourceTree = "<group>"; };
 		3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
-		8AACF1782032DE1400732E86 /* AVWXKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVWXKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AACF17B2032DE1400732E86 /* AVWXKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVWXKit.h; sourceTree = "<group>"; };
-		8AACF17C2032DE1400732E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8AACF1842032DF7C00732E86 /* Metar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metar.swift; sourceTree = "<group>"; };
-		8AACF1952032DFE100732E86 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
-		8AACF19A2032E11400732E86 /* AVWXKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVWXKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AACF19E2032E11400732E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8AACF1A52032E12700732E86 /* DeserialisationSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeserialisationSpecs.swift; sourceTree = "<group>"; };
+		8A56A85F29DECD87006F8ECB /* AVWXKit */ = {isa = PBXFileReference; lastKnownFileType = text; name = AVWXKit; sourceTree = SOURCE_ROOT; };
 		8AACF1A92032E16600732E86 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		8AACF1AA2032E16600732E86 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		8AACF1AB2032E16600732E86 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		8AACF1B02032E27A00732E86 /* metar-response-valid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "metar-response-valid.json"; sourceTree = "<group>"; };
-		8ABB6DED20333EF800A466D8 /* AVWXClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVWXClient.swift; sourceTree = "<group>"; };
-		8ABB6DEF203345BA00A466D8 /* AVWXClientSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVWXClientSpecs.swift; sourceTree = "<group>"; };
-		8ABB6DF1203362E500A466D8 /* EndpointSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointSpecs.swift; sourceTree = "<group>"; };
 		8ABB6DF7203426B200A466D8 /* AVWXSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVWXSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ABB6DF9203426B200A466D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ABB6DFB203426B200A466D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,42 +34,17 @@
 		8ABB6E05203426B200A466D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AD91CAB203473D00064AB2B /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		8AD91CAC203473D10064AB2B /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		8AFC8EA5203DF0AD00372685 /* MetarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetarDate.swift; sourceTree = "<group>"; };
 		C4D8736778BC12705F67535C /* EntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
-		C4D8762D7934037D1744E53F /* Translations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
-		C4D87742DF749B8102E25580 /* metar-response-valid-translate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "metar-response-valid-translate.json"; sourceTree = "<group>"; };
 		C4D8783A29BC449406E3BAD2 /* MetarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetarViewModel.swift; sourceTree = "<group>"; };
 		C4D879EEF0A28E5661A93849 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8AACF1742032DE1400732E86 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8AACF1972032E11400732E86 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8AACF19F2032E11400732E86 /* AVWXKit.framework in Frameworks */,
-				8AACF1AC2032E17800732E86 /* Nimble.framework in Frameworks */,
-				8AACF1AD2032E17800732E86 /* OHHTTPStubs.framework in Frameworks */,
-				8AACF1AE2032E17800732E86 /* Quick.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8ABB6DF4203426B200A466D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A2C03B1203C3388003CA0DE /* SVProgressHUD.framework in Frameworks */,
-				8A6275F420DFF53800F48519 /* AVWXKit.framework in Frameworks */,
-				8AD91CAD203473DC0064AB2B /* RxCocoa.framework in Frameworks */,
-				8AD91CAF203473DC0064AB2B /* RxSwift.framework in Frameworks */,
-				3D6ADE4422610EE300236ACB /* RxAtomic.framework in Frameworks */,
+				8A56A86129DECDF9006F8ECB /* AVWXKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,57 +54,18 @@
 		8AACF16E2032DE1400732E86 = {
 			isa = PBXGroup;
 			children = (
-				8AACF17A2032DE1400732E86 /* AVWXKit */,
-				8AACF19B2032E11400732E86 /* AVWXKitTests */,
 				8ABB6DF8203426B200A466D8 /* SampleApp */,
 				8AACF1A82032E15300732E86 /* Frameworks */,
 				8AACF1792032DE1400732E86 /* Products */,
-				8AACF1952032DFE100732E86 /* Cartfile.private */,
-				3D97EF0C23854BE800F0F5E5 /* Cartfile.resolved */,
 			);
 			sourceTree = "<group>";
 		};
 		8AACF1792032DE1400732E86 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8AACF1782032DE1400732E86 /* AVWXKit.framework */,
-				8AACF19A2032E11400732E86 /* AVWXKitTests.xctest */,
 				8ABB6DF7203426B200A466D8 /* AVWXSampleApp.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		8AACF17A2032DE1400732E86 /* AVWXKit */ = {
-			isa = PBXGroup;
-			children = (
-				8ABB6DEC20333EEA00A466D8 /* Network */,
-				8AACF1832032DF6300732E86 /* Models */,
-				8AACF17B2032DE1400732E86 /* AVWXKit.h */,
-				8AACF17C2032DE1400732E86 /* Info.plist */,
-			);
-			path = AVWXKit;
-			sourceTree = "<group>";
-		};
-		8AACF1832032DF6300732E86 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				8AACF1842032DF7C00732E86 /* Metar.swift */,
-				8AFC8EA5203DF0AD00372685 /* MetarDate.swift */,
-				C4D8762D7934037D1744E53F /* Translations.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		8AACF19B2032E11400732E86 /* AVWXKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				8AACF1AF2032E22800732E86 /* resources */,
-				8AACF19E2032E11400732E86 /* Info.plist */,
-				8AACF1A52032E12700732E86 /* DeserialisationSpecs.swift */,
-				8ABB6DEF203345BA00A466D8 /* AVWXClientSpecs.swift */,
-				8ABB6DF1203362E500A466D8 /* EndpointSpecs.swift */,
-			);
-			path = AVWXKitTests;
 			sourceTree = "<group>";
 		};
 		8AACF1A82032E15300732E86 /* Frameworks */ = {
@@ -237,29 +82,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8AACF1AF2032E22800732E86 /* resources */ = {
-			isa = PBXGroup;
-			children = (
-				8AACF1B02032E27A00732E86 /* metar-response-valid.json */,
-				C4D87742DF749B8102E25580 /* metar-response-valid-translate.json */,
-				3DDE6B93226CC01B00346D0D /* metar-response-valid-no-wind.json */,
-			);
-			path = resources;
-			sourceTree = "<group>";
-		};
-		8ABB6DEC20333EEA00A466D8 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				8ABB6DED20333EF800A466D8 /* AVWXClient.swift */,
-				3D6B447F2385172F00248210 /* MetarOptions.swift */,
-				3D6B447D2385170D00248210 /* Endpoint.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		8ABB6DF8203426B200A466D8 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				8A56A85F29DECD87006F8ECB /* AVWXKit */,
 				8ABB6DF9203426B200A466D8 /* AppDelegate.swift */,
 				8ABB6DFB203426B200A466D8 /* ViewController.swift */,
 				8ABB6DFD203426B200A466D8 /* Main.storyboard */,
@@ -283,56 +109,7 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		8AACF1752032DE1400732E86 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8AACF17D2032DE1400732E86 /* AVWXKit.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		8AACF1772032DE1400732E86 /* AVWXKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8AACF1802032DE1400732E86 /* Build configuration list for PBXNativeTarget "AVWXKit" */;
-			buildPhases = (
-				8AACF1732032DE1400732E86 /* Sources */,
-				8AACF1742032DE1400732E86 /* Frameworks */,
-				8AACF1752032DE1400732E86 /* Headers */,
-				8AACF1762032DE1400732E86 /* Resources */,
-				3D31BE792183178C0004FE56 /* Swift Lint */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AVWXKit;
-			productName = AVWXKit;
-			productReference = 8AACF1782032DE1400732E86 /* AVWXKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		8AACF1992032E11400732E86 /* AVWXKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8AACF1A22032E11400732E86 /* Build configuration list for PBXNativeTarget "AVWXKitTests" */;
-			buildPhases = (
-				8AACF1962032E11400732E86 /* Sources */,
-				8AACF1972032E11400732E86 /* Frameworks */,
-				8AACF1982032E11400732E86 /* Resources */,
-				8ABB6DE72032E73100A466D8 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8AACF1A12032E11400732E86 /* PBXTargetDependency */,
-			);
-			name = AVWXKitTests;
-			productName = AVWXKitTests;
-			productReference = 8AACF19A2032E11400732E86 /* AVWXKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		8ABB6DF6203426B200A466D8 /* AVWXSampleApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8ABB6E06203426B200A466D8 /* Build configuration list for PBXNativeTarget "AVWXSampleApp" */;
@@ -340,15 +117,15 @@
 				8ABB6DF3203426B200A466D8 /* Sources */,
 				8ABB6DF4203426B200A466D8 /* Frameworks */,
 				8ABB6DF5203426B200A466D8 /* Resources */,
-				8AD91CB1203473DC0064AB2B /* Embed Frameworks */,
-				3D2D3E54238A79E800DC4B9F /* Swift Lint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8ACEC54920348C8700892F13 /* PBXTargetDependency */,
 			);
 			name = AVWXSampleApp;
+			packageProductDependencies = (
+				8A56A86029DECDF9006F8ECB /* AVWXKit */,
+			);
 			productName = SampleApp;
 			productReference = 8ABB6DF7203426B200A466D8 /* AVWXSampleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -363,16 +140,6 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = AeroNav;
 				TargetAttributes = {
-					8AACF1772032DE1400732E86 = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-					};
-					8AACF1992032E11400732E86 = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1120;
-						ProvisioningStyle = Automatic;
-					};
 					8ABB6DF6203426B200A466D8 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1120;
@@ -393,31 +160,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8AACF1772032DE1400732E86 /* AVWXKit */,
-				8AACF1992032E11400732E86 /* AVWXKitTests */,
 				8ABB6DF6203426B200A466D8 /* AVWXSampleApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8AACF1762032DE1400732E86 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8AACF1982032E11400732E86 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8ABB6DEB2032E75900A466D8 /* metar-response-valid.json in Resources */,
-				C4D879C9892D9B22B9A00F30 /* metar-response-valid-translate.json in Resources */,
-				3DDE6B94226CC01B00346D0D /* metar-response-valid-no-wind.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8ABB6DF5203426B200A466D8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,69 +178,7 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3D2D3E54238A79E800DC4B9F /* Swift Lint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Lint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		3D31BE792183178C0004FE56 /* Swift Lint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Lint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		8AACF1732032DE1400732E86 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8ABB6DEE20333EF800A466D8 /* AVWXClient.swift in Sources */,
-				8AFC8EA6203DF0AD00372685 /* MetarDate.swift in Sources */,
-				3D6B44802385172F00248210 /* MetarOptions.swift in Sources */,
-				8AACF1852032DF7C00732E86 /* Metar.swift in Sources */,
-				C4D87C5C654A1A8DA2216356 /* Translations.swift in Sources */,
-				3D6B447E2385170D00248210 /* Endpoint.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8AACF1962032E11400732E86 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8ABB6DF2203362E500A466D8 /* EndpointSpecs.swift in Sources */,
-				8AACF1A62032E12700732E86 /* DeserialisationSpecs.swift in Sources */,
-				8ABB6DF0203345BA00A466D8 /* AVWXClientSpecs.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8ABB6DF3203426B200A466D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,19 +192,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8AACF1A12032E11400732E86 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8AACF1772032DE1400732E86 /* AVWXKit */;
-			targetProxy = 8AACF1A02032E11400732E86 /* PBXContainerItemProxy */;
-		};
-		8ACEC54920348C8700892F13 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8AACF1772032DE1400732E86 /* AVWXKit */;
-			targetProxy = 8ACEC54820348C8700892F13 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8ABB6DFD203426B200A466D8 /* Main.storyboard */ = {
@@ -650,100 +323,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		8AACF1812032DE1400732E86 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = G9MA9G2SST;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AVWXKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeronavmap.AVWXKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8AACF1822032DE1400732E86 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = G9MA9G2SST;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AVWXKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeronavmap.AVWXKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		8AACF1A32032E11400732E86 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9MA9G2SST;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = AVWXKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeronavmap.AVWXKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8AACF1A42032E11400732E86 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9MA9G2SST;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = AVWXKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aeronavmap.AVWXKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		8ABB6E07203426B200A466D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9MA9G2SST;
@@ -752,7 +342,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aeronavmap.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -763,7 +357,6 @@
 		8ABB6E08203426B200A466D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9MA9G2SST;
@@ -772,7 +365,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aeronavmap.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -792,24 +389,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8AACF1802032DE1400732E86 /* Build configuration list for PBXNativeTarget "AVWXKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8AACF1812032DE1400732E86 /* Debug */,
-				8AACF1822032DE1400732E86 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8AACF1A22032E11400732E86 /* Build configuration list for PBXNativeTarget "AVWXKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8AACF1A32032E11400732E86 /* Debug */,
-				8AACF1A42032E11400732E86 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8ABB6E06203426B200A466D8 /* Build configuration list for PBXNativeTarget "AVWXSampleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -820,6 +399,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8A56A86029DECDF9006F8ECB /* AVWXKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AVWXKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8AACF16F2032DE1400732E86 /* Project object */;
 }
