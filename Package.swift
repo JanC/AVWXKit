@@ -32,6 +32,9 @@ let package = Package(
                 "Quick",
                 "Nimble",
                 .product(name: "OHHTTPStubsSwift", package: "OHHTTPStubs")
+            ],
+            resources: [
+                .process("Resources")
             ]),
     ]
 )
