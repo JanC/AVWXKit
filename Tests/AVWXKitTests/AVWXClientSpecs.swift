@@ -10,6 +10,7 @@
 import Foundation
 import Nimble
 import OHHTTPStubs
+import OHHTTPStubsSwift
 import Quick
 
 class AVWXClientSpecs: QuickSpec {
@@ -23,7 +24,7 @@ class AVWXClientSpecs: QuickSpec {
             var error: Error?
             
             afterEach {
-                OHHTTPStubs.removeAllStubs()
+                HTTPStubs.removeAllStubs()
             }
             
             beforeEach {
@@ -34,7 +35,8 @@ class AVWXClientSpecs: QuickSpec {
                 
                 beforeEach {
                     stub(condition: isHost(sut.baseURL.host!)) { _ in
-                        let stubPath = OHPathForFile("metar-response-valid.json", type(of: self))
+                        
+                        let stubPath = Bundle.module.path(forResource: "metar-response-valid", ofType: "json")
                         return fixture(filePath: stubPath!, headers: ["Content-Type": "application/json"])
                     }
                     
@@ -58,7 +60,7 @@ class AVWXClientSpecs: QuickSpec {
             context("given an invalid json response") {
                 beforeEach {
                     stub(condition: isHost(sut.baseURL.host!)) { _ in
-                        return OHHTTPStubsResponse(jsonObject: [ "foo": "bar"], statusCode: 200, headers: nil)
+                        return HTTPStubsResponse(jsonObject: [ "foo": "bar"], statusCode: 200, headers: nil)
                     }
                     
                     sut.fetchMetar(at: "KSBP") { result in
@@ -81,7 +83,7 @@ class AVWXClientSpecs: QuickSpec {
             context("given an 404 http code") {
                 beforeEach {
                     stub(condition: isHost(sut.baseURL.host!)) { _ in
-                        return OHHTTPStubsResponse(jsonObject: [ "foo": "bar"], statusCode: 404, headers: nil)
+                        return HTTPStubsResponse(jsonObject: [ "foo": "bar"], statusCode: 404, headers: nil)
                     }
                     sut.fetchMetar(at: "KSBP") { result in
                         switch result {

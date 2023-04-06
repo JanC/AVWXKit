@@ -8,7 +8,6 @@
 
 import AVWXKit
 import CoreLocation
-import SVProgressHUD
 import UIKit
 
 class ViewController: UIViewController {
