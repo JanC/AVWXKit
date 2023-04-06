@@ -1,8 +1,0 @@
-# Unit Tests
-github "Quick/Quick"
-github "Quick/Nimble"
-github "AliSoftware/OHHTTPStubs"
-
-# Sample App
-github "SVProgressHUD/SVProgressHUD"
-
