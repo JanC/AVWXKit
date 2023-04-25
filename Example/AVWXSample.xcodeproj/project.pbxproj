@@ -21,6 +21,7 @@
 /* Begin PBXFileReference section */
 		3DFE9BCE21C8D942005D3756 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		8A2C03B0203C337F003CA0DE /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		8A86D12729F7B66B00975A9B /* AVWXKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AVWXKit; path = ..; sourceTree = "<group>"; };
 		8AACF1A92032E16600732E86 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		8AACF1AA2032E16600732E86 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		8AACF1AB2032E16600732E86 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		8AACF16E2032DE1400732E86 = {
 			isa = PBXGroup;
 			children = (
+				8A86D12729F7B66B00975A9B /* AVWXKit */,
 				8ABB6DF8203426B200A466D8 /* SampleApp */,
 				8AACF1A82032E15300732E86 /* Frameworks */,
 				8AACF1792032DE1400732E86 /* Products */,
