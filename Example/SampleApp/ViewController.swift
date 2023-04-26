@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     @IBAction func fetchAction(sender: Any) {
 
         guard let icao = icaoTextField.text else { return }
-        client.fetchMetar(at: icao, options: [.speech, .info], completion: handleResult(_:))
+        client.fetchMetar(at: icao, options: [.speech, .info, .translate], completion: handleResult(_:))
     }
 
     // MARK: - Private

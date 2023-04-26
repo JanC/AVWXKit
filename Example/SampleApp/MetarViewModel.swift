@@ -54,7 +54,7 @@ struct MetarViewModel {
             values.append(EntryViewModel(title: "Wind", value: translations.wind))
             values.append(EntryViewModel(title: "Clouds", value: translations.clouds.replacingOccurrences(of: ", ", with: "\n")))
             values.append(EntryViewModel(title: "Dew Point", value: translations.dewpoint))
-            values.append(EntryViewModel(title: "Other", value: translations.other))
+            values.append(EntryViewModel(title: "Other", value: translations.wxCodes))
 
             for (remark, remarkValue) in translations.remarks {
                 values.append(EntryViewModel(title: "Remark \(remark)", value: remarkValue))

@@ -10,7 +10,7 @@ public struct Translations: Codable {
     public let altimeter: String
     public let clouds: String
     public let dewpoint: String
-    public let other: String
+    public let wxCodes: String
     public let remarks: [String: String]
     public let temperature: String
     public let visibility: String
@@ -20,7 +20,7 @@ public struct Translations: Codable {
         case altimeter
         case clouds
         case dewpoint
-        case other
+        case wxCodes = "wx_codes"
         case remarks
         case temperature
         case visibility
