@@ -3,33 +3,17 @@ on:
   push:
     branches:
       - master
+      - '*'
   pull_request:
     branches:
       - '*'
     
 jobs:
-  test:
-    name: Xcode ${{ matrix.xcode }}
-    runs-on: macOS-latest
-    strategy:
-      matrix:
-        xcode: [11.2]
-    steps:
-      - uses: actions/checkout@v1
-      
-      - name: Install dependencies
-        run: bundle install
-
-      - uses: actions/cache@v1
-        with:
-          path: Carthage
-          key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
-          
-      - name: Select XCode
-        run: sudo xcode-select -s '/Applications/Xcode_${{ matrix.xcode }}.app'
-
-      - name: Install Carthage
-        run: bundle exec fastlane kit_carthage_build
-
-      - name: Run Unit Tests
-        run: bundle exec fastlane kit_test
+  build: 
+    runs-on: macos-latest 
+    steps: 
+    - uses: actions/checkout@v2
+    - name: Build
+      run: swift build
+    - name: Run tests
+      run: swift test
