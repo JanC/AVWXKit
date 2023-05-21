@@ -111,3 +111,5 @@ xcuserdata/
 # End of https://www.gitignore.io/api/xcode,appcode,carthage
 /.idea
 /fastlane/report.xml
+
+.build
