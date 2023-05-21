@@ -78,7 +78,7 @@
     "translate": {
         "altimeter": "29.83inHg (1010hPa)",
         "clouds": "Sky clear",
-        "other": "",
+        "wx_codes": "",
         "visibility": "10sm (16.1km)",
         "dewpoint": "7°C (45°F)",
         "remarks": {
