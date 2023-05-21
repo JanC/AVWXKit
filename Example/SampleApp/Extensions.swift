@@ -8,13 +8,11 @@ import CoreLocation
 import UIKit
 
 extension ViewController {
-
     func showMessage(_ title: String, description: String? = nil) {
         alert(title: title, text: description)
     }
 
     func alert(title: String, text: String? = nil) {
-
         let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { _ in
@@ -26,7 +24,6 @@ extension ViewController {
 }
 
 extension CLLocationCoordinate2D {
-
     /// 35.237,-120.644
     init?(coordinatesString: String) {
         let stringArray = coordinatesString.split(separator: ",")

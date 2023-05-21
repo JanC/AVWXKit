@@ -13,10 +13,8 @@ import Nimble
 import Quick
 
 class EndpointSpecs: QuickSpec {
-    
     let baseURL = URL(string: "https://avwx.rest/api/")!
     override func spec() {
-        
         describe("metar endpoint") {
             context("with icao") {
                 var url: URL!
@@ -42,7 +40,6 @@ class EndpointSpecs: QuickSpec {
             }
             
             context("with options") {
-                
                 context("info option") {
                     var url: URL!
                     beforeEach {

@@ -6,7 +6,6 @@
 import Foundation
 
 public struct Translations: Codable {
-    
     public let altimeter: String
     public let clouds: String
     public let dewpoint: String

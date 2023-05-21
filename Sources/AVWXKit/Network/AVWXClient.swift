@@ -10,7 +10,6 @@ import CoreLocation
 import Foundation
 
 public struct AVWXClient {
-    
     let session = URLSession(configuration: URLSessionConfiguration.default)
     let baseURL: URL
     let token: String

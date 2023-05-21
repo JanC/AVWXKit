@@ -10,7 +10,6 @@ import CoreLocation
 import Foundation
 
 enum Endpoint {
-
     case metar(String, MetarOptions)
     case metarCoordintes(CLLocationCoordinate2D, MetarOptions)
     case taf(String)
@@ -39,7 +38,7 @@ enum Endpoint {
             let optionValues = options.string(),
             var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         {
-            components.queryItems =  [URLQueryItem(name: "options", value: optionValues)]
+            components.queryItems = [URLQueryItem(name: "options", value: optionValues)]
             if let url = components.url {
                 resultUrl = url
             }

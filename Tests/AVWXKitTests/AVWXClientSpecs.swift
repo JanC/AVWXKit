@@ -14,10 +14,8 @@ import OHHTTPStubsSwift
 import Quick
 
 class AVWXClientSpecs: QuickSpec {
-    
     override func spec() {
         describe("getting metar") {
-            
             let sut = AVWXClient(token: "")
             
             var metar: Metar?
@@ -32,10 +30,8 @@ class AVWXClientSpecs: QuickSpec {
             }
             
             context("given a valid json response") {
-                
                 beforeEach {
                     stub(condition: isHost(sut.baseURL.host!)) { _ in
-                        
                         let stubPath = Bundle.module.path(forResource: "metar-response-valid", ofType: "json")
                         return fixture(filePath: stubPath!, headers: ["Content-Type": "application/json"])
                     }

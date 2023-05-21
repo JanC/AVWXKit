@@ -7,19 +7,16 @@
 //
 
 @testable import AVWXKit
+import Foundation
 import Nimble
 import Quick
 import XCTest
-import Foundation
 
 class DeserialisationSpecs: QuickSpec {
-    
     override func spec() {
-        
         let decoder = JSONDecoder()
         
         describe("metar parsing") {
-            
             context("given a valid metar") {
                 var metar: Metar?
                 beforeEach {
@@ -29,7 +26,6 @@ class DeserialisationSpecs: QuickSpec {
                     } catch {
                         XCTFail("Failed to parse: \(error)")
                     }
-                    
                 }
                 
                 it("parses the raw report") {
@@ -79,7 +75,6 @@ class DeserialisationSpecs: QuickSpec {
                     } catch {
                         XCTFail("Failed to parse: \(error)")
                     }
-
                 }
 
                 it("parses the traslations") {
@@ -100,7 +95,6 @@ class DeserialisationSpecs: QuickSpec {
                     } catch {
                         XCTFail("Failed to parse: \(error)")
                     }
-
                 }
 
                 it("parses the info") {

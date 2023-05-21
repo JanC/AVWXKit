@@ -8,13 +8,11 @@ import Foundation
 import AVWXKit
 
 struct EntryViewModel {
-
     let title: String
     let value: String
 }
 
 struct MetarViewModel {
-
     let metar: Metar
 
     var sectionTitle: String {

@@ -11,7 +11,6 @@ import CoreLocation
 import UIKit
 
 class ViewController: UIViewController {
-
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var icaoTextField: UITextField!
     @IBOutlet private var coordinatesTextField: UITextField!
@@ -30,14 +29,11 @@ class ViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func requestByCoordinatesAction(sender: Any) {
-    
-        
         guard let coordinates = CLLocationCoordinate2D(coordinatesString: coordinatesTextField.text!) else { return }
         client.fetchMetar(at: coordinates, options: [.speech, .info], completion: handleResult(_:))
     }
     
     @IBAction func fetchAction(sender: Any) {
-
         guard let icao = icaoTextField.text else { return }
         client.fetchMetar(at: icao, options: [.speech, .info, .translate], completion: handleResult(_:))
     }
@@ -58,7 +54,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDataSource {
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.rowsCount ?? 0
     }

@@ -10,7 +10,6 @@ import CommonCrypto
 import Foundation
 
 public struct Metar: Decodable {
-    
     public enum FlightRules: String, Decodable {
         case vfr = "VFR"
         case mfr = "MVFR"
@@ -91,7 +90,6 @@ public struct Metar: Decodable {
 
 // MARK: - Helpers
 public extension Metar {
-
     var minutesOld: Int {
         let now = Date()
         let oldSec = now.timeIntervalSince(date) / 60

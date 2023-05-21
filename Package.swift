@@ -6,13 +6,13 @@ import PackageDescription
 let package = Package(
     name: "AVWXKit",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v13)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "AVWXKit",
-            targets: ["AVWXKit"]),
+            targets: ["AVWXKit"])
     ],
     dependencies: [
         .package(url: "https://github.com/Quick/Quick.git", from: "6.1.0"),
@@ -35,6 +35,6 @@ let package = Package(
             ],
             resources: [
                 .process("Resources")
-            ]),
+            ])
     ]
 )
