@@ -59,7 +59,7 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let viewModel = viewModel else { fatalError("no view model") }
+        guard let viewModel else { fatalError("no view model") }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath) as? EntryTableViewCell else { fatalError() }
 
         cell.configure(with: viewModel.viewModel(at: indexPath))

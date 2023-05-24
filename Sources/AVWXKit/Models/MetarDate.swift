@@ -18,7 +18,7 @@ struct MetarDate: Decodable {
 //        "dt": "2019-04-12T17:56:00Z"
         case time = "repr"
     }
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         // The metar time has a format 'ddHHmmZ' (e.g 130756Z)
         // So we need to append the current year and month (yyyy-MM) in order to parse the entire date back
         
