@@ -13,10 +13,10 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "10.0"
   s.swift_version = "5.0"
 
-  s.source_files = 'AVWXKit/**/*.swift'
+  s.source_files = 'Sources/**/*.swift'
   s.test_spec 'Tests' do |test_spec|
     test_spec.requires_app_host = false
-    test_spec.source_files = ['AVWXKitTests/**/*.{swift}']
+    test_spec.source_files = ['Tests/**/*.{swift}']
     test_spec.dependency 'Nimble', "~> 8.0.2"
     test_spec.dependency 'Quick', "~> 2.1.0"
     test_spec.dependency  'OHHTTPStubs', "~> 8.0.0"
