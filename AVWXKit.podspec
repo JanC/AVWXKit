@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author           = { 'NA' => 'jan.chaloupecky@gmail.com' }
   s.source           = { :git => 'git@github.com:JanC/AVWXKit.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = "10.0"
+  s.ios.deployment_target = "15.0"
   s.swift_version = "5.0"
 
   s.source_files = 'Sources/**/*.swift'
