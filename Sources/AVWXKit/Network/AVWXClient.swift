@@ -59,6 +59,7 @@ public struct AVWXClient {
                 return
             }
             let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
             do {
                 let result = try decoder.decode(T.self, from: data)
                 completion(Result.success(result))

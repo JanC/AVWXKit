@@ -15,6 +15,7 @@ import XCTest
 class DeserialisationSpecs: QuickSpec {
     override func spec() {
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
         
         describe("metar parsing") {
             context("given a valid metar") {
